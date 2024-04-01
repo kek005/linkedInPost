@@ -26,7 +26,7 @@ easyApplyKey = ""
 # continent locations:["Europe", "Asia", "Australia", "NorthAmerica", "SouthAmerica", "Africa", "Australia"]
 location = ["NorthAmerica"]
 # keywords related with your job search
-keywords = ["quality%20assurance%20manager" "test", "quality%20assurance%20engineer", "tester", "automation", "SDET", "quality%20engineer", "quality%20assurance%20tester", "QA"]
+keywords = ["quality%20assurance%20manager"]
 desired_words = ["qa", "tester", "automation", "test", "quality", "assurance", "sdet", "validation", "verification", "qe", "qc", "python", "owner", "performance", "integration", "analyst", "QC", "release", "engineer", "lead"]
 #job experience Level - ex:  ["Internship", "Entry level" , "Associate" , "Mid-Senior level" , "Director" , "Executive"]
 experienceLevels = [ "Entry level", "Associate" , "Mid-Senior level", "Director" , "Executive" ]

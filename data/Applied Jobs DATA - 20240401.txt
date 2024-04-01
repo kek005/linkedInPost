@@ -1,0 +1,25 @@
+---- Applied Jobs Data ---- created at: 20240401
+---- Number | Job Title | Company | Location | Work Place | Posted Date | Applications | Result 
+
+ Category: quality%20assurance%20managertest, Location: NorthAmerica, Applying 45 results jobs.
+
+ Category: quality%20assurance%20manager, Location: NorthAmerica, Applying 48 results jobs.
+1 | Quality Assurance Manager<span class="job-details-jobs-unified-top-card__job-title-space"></span><div class="inline-block relative job-details-jobs-unified-top-card__job-title-badge-wrapper">
+                    <button class="job-details-jobs-unified-top-card__job-title-badge" aria-label="View verified hiring modal" type="button">
+                      
+    <div class="ivm-image-view-model   ">
+        
+    <div class="ivm-view-attr__img-wrapper
+        display-flex">
+        <svg role="none" aria-hidden="true" class="ivm-view-attr__icon  " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="verified-medium">
+<!---->    
+
+    <use href="#verified-medium" width="24" height="24"></use>
+</svg>
+
+    </div>
+  
+          </div>
+  
+                    </button>
+                  </div> |  | Toronto, Ontario, Canada | Remote |  |  | * 🥳 Already applied! Job: https://www.linkedin.com/jobs/view/3880041544

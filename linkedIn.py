@@ -40,6 +40,7 @@ class Linkedin:
             options.add_argument(r'--profile-directory=Profile 1')
             #options.add_argument(r'--profile-directory=Profile')
             #options.add_argument('--headless')
+            options.add_argument("--start-maximized")
             self.driver = webdriver.Chrome(service=service, options=options)
 
     
@@ -65,86 +66,42 @@ class Linkedin:
         for url in urlData:        
             self.driver.get(url)
 
-            totalJobs = self.driver.find_element(By.XPATH,'//small').text
+            # JavaScript code to find the home button and click it
+            homeButton = """
+            var linkElement = document.querySelector('a[data-test-app-aware-link]');
+            if (linkElement) {
+                linkElement.click();
+            } else {
+                console.log('Element not found');
+            }
+            """
+            self.driver.execute_script(homeButton)
+            time.sleep(5)
 
-            urlWords =  utils.urlToKeywords(url)
-            lineToWrite = "\n Category: " + urlWords[0] + ", Location: " +urlWords[1] + ", Applying " +str(totalJobs)+ " jobs."
-            self.displayWriteResults(lineToWrite)
-            time.sleep(random.uniform(1, constants.botSpeed))
-            offersPerPage = self.driver.find_elements(By.XPATH,'//li[@data-occludable-job-id]')
-            offerIds = []
+        self.driver.find_element(By.XPATH,"//button[contains(@class, 'artdeco-button') and contains(@class, 'share-box-feed-entry__trigger')]").click()
+        time.sleep(5)
+        bookExcerpt = "AI testing is a type of software testing that involves testing artificial intelligence applications. It is a process that involves testing the functionality, performance, and reliability of AI applications. AI testing is an important part of the software development process, as it helps ensure that AI applications are working as intended and are free from bugs and errors. AI testing is a complex process that requires specialized tools and techniques to ensure that AI applications are tested thoroughly and accurately."
+        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less."
+        gpt_response = self.get_gpt_response(prompt)
+        time.sleep(random.uniform(1, constants.botSpeed))
+        print("Here is the response from GPT for radio button continue page: ")
+        print(gpt_response)
+        
+        # Find the content-editable element (ql-editor) within the Quill container
+        editor = self.driver.find_element(By.XPATH, "//div[contains(@class, 'ql-editor') and @contenteditable='true']")
 
-            time.sleep(random.uniform(1, constants.botSpeed))
+        # Use send_keys to input text
+        editor.send_keys(gpt_response)
 
-            for offer in offersPerPage:
-                try:
-                    offerId = offer.get_attribute("data-occludable-job-id")
-                    offerIds.append(int(offerId.split(":")[-1]))
-                except StaleElementReferenceException:
-                    prYellow("⚠️ Warning: StaleElementReferenceException, trying to recover from error by getting the offerId again.")
-                    time.sleep(random.uniform(1, constants.botSpeed))
-                    offerId = offer.get_attribute("data-occludable-job-id")
-                    offerIds.append(int(offerId.split(":")[-1]))
+        #element = self.driver.find_element(By.XPATH, "//div[@class='ql-clipboard']")
+        #self.driver.execute_script("arguments[0].click();", element)
+        #self.driver.find_element(By.XPATH,"//div[@class='ql-clipboard']").click()
 
-            for jobID in offerIds:
-                offerPage = 'https://www.linkedin.com/jobs/view/' + str(jobID)
-                self.driver.get(offerPage)
-                time.sleep(random.uniform(1, constants.botSpeed))
-
-                countJobs += 1
-
-                jobProperties = self.getJobProperties(countJobs)
-                if "blacklisted" in jobProperties: 
-                    lineToWrite = jobProperties + " | " + "* 🤬 Blacklisted Job, skipped!: " +str(offerPage)
-                    self.displayWriteResults(lineToWrite)
-                    time.sleep(random.uniform(1, constants.botSpeed))
-
-                else : 
-                    self.driver.execute_script("window.scrollTo(0, 270);")
-                    time.sleep(random.uniform(1, constants.botSpeed)) 
-                    buttonXpath = self.getXpathEasyApplyButton()             
-                    button = self.easyApplyButton(buttonXpath)
-
-                    if button is not False:
-                        button.click()
-                        time.sleep(random.uniform(1, constants.botSpeed))
-                        countApplied += 1
-
-                        try:
-                            self.chooseResume()
-                            self.driver.find_element(By.CSS_SELECTOR, "button[aria-label='Submit application']").click()
-                            time.sleep(random.uniform(1, constants.botSpeed))
-
-                            lineToWrite = jobProperties + " | " + "* 🥳 Just Applied to this job: "  +str(offerPage)
-                            self.displayWriteResults(lineToWrite)
-
-                        except:
-                            try:
-                                self.driver.find_element(By.CSS_SELECTOR,"button[aria-label='Continue to next step']").click()
-                                time.sleep(random.uniform(1, constants.botSpeed))
-
-                                comPercentage = self.driver.find_element(By.XPATH,'html/body/div[3]/div/div/div[2]/div/div/span').text
-                                percenNumber = int(comPercentage[0:comPercentage.index("%")])
-                                result = self.applyProcess(percenNumber,offerPage)
-                                lineToWrite = jobProperties + " | " + result
-                                self.displayWriteResults(lineToWrite)
-
-                            except Exception as e: 
-                                self.chooseResume()
-                                lineToWrite = jobProperties + " | " + "* 🥵 Cannot apply to this Job! " +str(offerPage)
-                                self.displayWriteResults(lineToWrite)
-
-                    else:
-                        lineToWrite = jobProperties + " | " + "* 🥳 Already applied! Job: " +str(offerPage)
-                        self.displayWriteResults(lineToWrite)
-
-
-            prYellow("Category: " + urlWords[0] + "," +urlWords[1]+ " applied: " + str(countApplied) +
-                  " jobs out of " + str(countJobs) + ".")
+        time.sleep(30)
 
         
 
-    def chooseResume(self):
+    """def chooseResume(self):
         try: 
             beSureIncludeResumeTxt = self.driver.find_element(By.CLASS_NAME, "jobs-document-upload__title--is-required")
             if(beSureIncludeResumeTxt.text == "Be sure to include an updated resume"):
@@ -156,9 +113,9 @@ class Linkedin:
                 else:
                     prRed("❌ No resume has been selected please add at least one resume to your Linkedin account.")
         except:
-            pass
+            pass"""
 
-    def getJobProperties(self, count):
+    """def getJobProperties(self, count):
         textToWrite = ""
         jobTitle = ""
         jobCompany = ""
@@ -219,9 +176,9 @@ class Linkedin:
             jobApplications = ""
 
         textToWrite = str(count)+ " | " +jobTitle+  " | " +jobCompany+  " | "  +jobLocation+ " | "  +jobWOrkPlace+ " | " +jobPostedDate+ " | " +jobApplications
-        return textToWrite
+        return textToWrite"""
     
-    def getXpathEasyApplyButton(self):
+    """def getXpathEasyApplyButton(self):
         easyApplyButtonXpath = ""
         jobTitlestp = ""
         jobCompanystp = ""
@@ -252,15 +209,15 @@ class Linkedin:
         easyApplyButtonXpath = f"//button[@aria-label='Easy Apply to {jobTitlestp} at {jobCompanystp}']"
         print("Here is the xpath for the easy apply button: ")
         print(easyApplyButtonXpath)
-        return easyApplyButtonXpath
+        return easyApplyButtonXpath"""
 
 
-    def easyApplyButton(self, buttonXpath):
+    '''def easyApplyButton(self, buttonXpath):
         try:
             time.sleep(random.uniform(1, constants.botSpeed))
             button = self.driver.find_element(By.XPATH, f'{buttonXpath}')
                 #"{buttonXpath}") #//button[@id='ember64']//span[contains(@class,'artdeco-button__text')][normalize-space()='Easy Apply']    /html[1]/body[1]/div[5]/div[3]/div[2]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/button[1]
-            '''print("I am trying to find the easy apply button")
+            print("I am trying to find the easy apply button")
             button = self.driver.find_element(By.CSS_SELECTOR,
                 "button[id='ember60'] span[class='artdeco-button__text']")
             print("I found the easy apply button")
@@ -268,14 +225,14 @@ class Linkedin:
             print(type(button))
             print("I am printing the button text")
             print(button.text)
-            print("code line 236")'''
+            print("code line 236")
             EasyApplyButton = button
         except: 
             EasyApplyButton = False
 
-        return EasyApplyButton
+        return EasyApplyButton'''
 
-    def applyProcess(self, percentage, offerPage):
+    """def applyProcess(self, percentage, offerPage):
         applyPages = math.floor(100 / percentage) 
         result = ""  
         try:
@@ -567,7 +524,7 @@ class Linkedin:
         except:
             # If for some reason it couldn't apply to the job, it will return the link of the job
             result = "* 🥵 " +str(applyPages)+ " Pages, couldn't apply to this job! Extra info needed. Link: " +str(offerPage)
-        return result
+        return result"""
 
     def get_gpt_response(self, prompt):
         try:
