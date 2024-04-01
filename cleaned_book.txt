@@ -2,7 +2,7 @@
 Definition of AI and AI Effect 
 The term artificial intelligence (AI) dates back to the 1950s and refers to the objective of building and 
 programming “intelligent” machines capable of imitating human beings.  The definition today has 
-evolved significantly, and the following definition captures the concept [S01]: 
+evolved significantly, and the following definition captures the concept : 
 The capability of an engineered system to acquire, process and apply knowledge and skills.  
 The way in which people understand the meaning of AI depends on their current perception.  In the 
 1970s the idea of a computer system that could beat a human at chess was somewhere in the future 
@@ -12,7 +12,7 @@ system is not considered by many to be true artificial intelligence (i.e., the s
 data and was not capable of self-learning).  Similarly, the expert systems of the 1970s and 1980s 
 incorporated human expertise as rules which could be run repeatedly without the expert being 
 present. These were considered to be AI then, but are not considered as such now.   
-The changing perception of what constitutes AI is known as the “AI Effect” [R01].  As the perception of 
+The changing perception of what constitutes AI is known as the “AI Effect” .  As the perception of 
 AI in society changes, so does its definition. As a result, any definition made today is likely to change 
 in the future and may not match those from the past. 
 1.2 
@@ -31,26 +31,26 @@ Super AI systems are capable of replicating human cognition (general AI) and mak
 massive processing power, practically unlimited memory and access to all human knowledge 
 (e.g., through access to the web). It is thought that super AI systems will quickly become 
 wiser than humans. The point at which AI-based systems transition from general AI to super 
-AI is commonly known as the technological singularity [B01]. 
+AI is commonly known as the technological singularity . 
 1.3 
 AI-Based and Conventional Systems 
 In a typical conventional computer system, the software is programmed by humans using an 
 imperative language, which includes constructs such as if-then-else and loops.  It is relatively easy for 
 humans to understand how the system transforms inputs into outputs.  In an AI-based system using 
 machine learning (ML), patterns in data are used by the system to determine how it should react in 
-the future to new data (see Chapter 3 for a detailed explanation of ML).  For example, an AI-based 
+the future to new data .  For example, an AI-based 
 image processor designed to identify images of cats is trained with a set of images known to contain 
 cats.  The AI determines on its own what patterns or features in the data can be used to identify cats.  
 These patterns and rules are then applied to new images in order to determine if they contain cats.  In 
 many AI-based systems, this results in the prediction-making procedure being less easy to 
-understand by humans (see Section 2.7). 
+understand by humans .
 
-In practice, AI-based systems can be implemented by a variety of technologies (see Section 1.4), and 
-the “AI Effect” (see Section 1.1) may determine what is currently considered to be an AI-based 
+In practice, AI-based systems can be implemented by a variety of technologies , and 
+the “AI Effect”  may determine what is currently considered to be an AI-based 
 system and what is considered to be a conventional system. 
 1.4 
 AI Technologies 
-AI can be implemented using a wide range of technologies (see [B02] for more details), such as: 
+AI can be implemented using a wide range of technologies , such as: 
 • 
 Fuzzy logic 
 • 
@@ -97,29 +97,29 @@ used for the implementation and its ease of use.  The following frameworks are s
 popular (as of April 2021): 
 • 
 Apache MxNet: A deep learning open-source framework used by Amazon for Amazon Web 
-Services (AWS) [R02]. 
+Services (AWS) . 
 • 
-CNTK: The Microsoft Cognitive Toolkit (CNTK) is an open-source deep-learning toolkit [R03]. 
+CNTK: The Microsoft Cognitive Toolkit (CNTK) is an open-source deep-learning toolkit . 
 • 
-IBM Watson Studio: A suite of tools that support the development of AI solutions [R04].  
+IBM Watson Studio: A suite of tools that support the development of AI solutions .
 
 • 
 Keras: A high-level open-source API, written in the Python language, capable of running on 
-top of TensorFlow and CNTK [R06]. 
+top of TensorFlow and CNTK . 
 • 
 PyTorch: An open-source ML library operated by Facebook and used for apps applying 
 image processing and natural language processing (NLP).  Support is provided for both 
-Python and C++ interfaces [R07].   
+Python and C++ interfaces .   
 • 
-Scikit-learn: An open-source machine ML library for the Python programming language [R08].  
+Scikit-learn: An open-source machine ML library for the Python programming language .  
 • 
 TensorFlow: An open-source ML framework based on data flow graphs for scalable machine 
-learning, provided by Google [R05].  
+learning, provided by Google .  
 Note that these development frameworks are constantly evolving, sometimes combining, and 
 sometimes being replaced by new frameworks. 
 1.6 
 Hardware for AI-Based Systems 
-A variety of hardware is used for ML model training (see Chapter 3) and model implementation.  For 
+A variety of hardware is used for ML model training  and model implementation.  For 
 example, a model that performs speech recognition may run on a low-end smartphone, although 
 access to the power of cloud computing may be needed to train it.  A common approach used when 
 the host device is not connected to the internet is to train the model in the cloud and then deploy it to 
@@ -143,30 +143,30 @@ Circuits (ASICs) and System on a Chip (SoC). These AI-specific solutions have fe
 multiple cores, special data management and the ability to perform in-memory processing.  They are 
 most suitable for edge computing, while the training of the ML model is done in the cloud. 
 Hardware with specific AI architectures is currently (as of April 2021) under development. This 
-includes neuromorphic processors [B03], which do not use the traditional von Neumann architecture, 
+includes neuromorphic processors , which do not use the traditional von Neumann architecture, 
 but rather an architecture that loosely mimics brain neurons.  
 Examples of AI hardware providers and their processors include (as of April 2021): 
 • 
-NVIDIA: They provide a range of GPUs and AI-specific processors, such as the Volta [R09]. 
+NVIDIA: They provide a range of GPUs and AI-specific processors, such as the Volta . 
 • 
 Google: They have developed application-specific integrated circuits for both training and 
-inferencing.  Google TPUs (Cloud Tensor Processing Units) [R10] can be accessed by users 
-on the Google Cloud, whereas the Edge TPU [R11] is a purpose-built ASIC designed to run 
-AI on individual devices.   
+inferencing.  Google TPUs (Cloud Tensor Processing Units)  can be accessed by users 
+on the Google Cloud, whereas the Edge TPU  is a purpose-built ASIC designed to run 
+AI on individual devices.
 
 • 
-Intel: They provide Nervana neural network processors [R12] for deep learning (both training 
+Intel: They provide Nervana neural network processors  for deep learning (both training 
 and inferencing) and Movidius Myriad vision processing units for inferencing in computer 
 vision and neural network applications.   
 • 
-Mobileye: They produce the EyeQ family of SoC devices [R13] to support complex and 
+Mobileye: They produce the EyeQ family of SoC devices  to support complex and 
 computationally intense vision processing. These have low power consumption for use in 
 vehicles. 
 • 
-Apple: They produce the Bionic chip for on-device AI in iPhones [B04]. 
+Apple: They produce the Bionic chip for on-device AI in iPhones . 
 • 
 Huawei: Their Kirin 970 chip for smartphones has built-in neural network processing for AI 
-[B05]. 
+. 
 1.7 
 AI as a Service (AIaaS) 
 AI components, such as ML models, can be created within an organization, downloaded from a third-
@@ -186,7 +186,7 @@ These AI services are typically provided with similar contracts as for non-AI cl
 a Service (SaaS).  A contract for AIaaS typically includes a service-level agreement (SLA) that 
 defines availability and security commitments.  Such SLAs typically cover an uptime for the service 
 (e.g., 99.99% uptime) and a response time to fix defects, but rarely define ML functional performance 
-metrics, (such as accuracy), in a similar manner (see Chapter 5).  AIaaS is often paid for on a 
+metrics, (such as accuracy), in a similar manner .  AIaaS is often paid for on a 
 subscription basis, and if the contracted availability and/or response times are not met, then the 
 service provider typically provides credits for future services.  Other than these credits, most AIaaS 
 contracts provide limited liability (other than in terms of fees paid), meaning that AI-based systems 
@@ -195,12 +195,12 @@ would not be too damaging.
 Services often come with an initial free trial period in lieu of an acceptance period. During this period 
 the consumer of the AIaaS is expected to test whether the provided service meets their needs in 
 terms of required functionality and performance (e.g., accuracy).  This is generally necessary to cover 
-any lack of transparency on the provided service (see Section 7.5). 
+any lack of transparency on the provided service . 
 1.7.2 AIaaS Examples 
 The following are examples of AIaaS (as of April 2021): 
 • 
 IBM Watson Assistant: This is an AI chatbot which is priced according to the number of 
-monthly active users. 
+monthly active users.
 
 • 
 Google Cloud AI and ML Products: These provide document-based AI that includes a form 
@@ -215,7 +215,7 @@ units (defined in terms of the storage and throughput used).
 1.8 
 Pre-Trained Models 
 1.8.1 Introduction to Pre-Trained Models 
-It can be expensive to train ML models (see Chapter 3). First, the data has to be prepared and then 
+It can be expensive to train ML models . First, the data has to be prepared and then 
 the model must be trained.  The first activity can consume large amounts of human resources, while 
 the latter activity can consume a lot of computing resources. Many organizations do not have access 
 to these resources. 
@@ -229,11 +229,10 @@ consuming significant resources with no guarantee of success.  Alternatively, an
 be reused that has already been trained on this dataset. By using such a pre-trained model, training 
 costs are saved and the risk of it not working largely eliminated.   
 When a pre-trained model is used without modification, it can simply be embedded in the AI-based 
-system, or it can be used as a service (see Section 1.7). 
+system, or it can be used as a service . 
 1.8.2 Transfer Learning 
 It is also possible to take a pre-trained model and modify it to perform a second, different requirement.  
-This is known as transfer learning and is used on deep neural networks in which the early layers (see 
-Chapter 6) of the neural network typically perform quite basic tasks (e.g., identifying the difference 
+This is known as transfer learning and is used on deep neural networks in which the early layers  of the neural network typically perform quite basic tasks (e.g., identifying the difference 
 between straight and curved lines in an image classifier), whereas the later layers perform more 
 specialized tasks (e.g., differentiating between building architectural types). In this example, all but the 
 later layers of an image classifier can be reused, eliminating the need to train the early layers. The 
@@ -244,8 +243,8 @@ by the original model and the function required by the new model. For example, m
 classifier that identifies cat species to then identify dog breeds would be far more effective than 
 modifying it to identify people’s accents.   
 There are many pre-trained models available, especially from academic researchers.  Some 
-examples of such pre-trained models are ImageNet models [R14] such as Inception, VGG, AlexNet, 
-and MobileNet for image classification and pre-trained NLP models like Google’s BERT [R15].   
+examples of such pre-trained models are ImageNet models  such as Inception, VGG, AlexNet, 
+and MobileNet for image classification and pre-trained NLP models like Google’s BERT .
 
 1.8.3 Risks of using Pre-Trained Models and Transfer Learning 
 Using pre-trained models and transfer learning are both common approaches to building AI-based 
@@ -257,12 +256,12 @@ The level of similarity between the function performed by the pre-trained model 
 required functionality may be insufficient. Also, this difference may not be understood by the 
 data scientist. 
 • 
-Differences in the data preparation steps (see Section 4.1) used for the pre-trained model 
+Differences in the data preparation steps  used for the pre-trained model 
 when originally developed and the data preparation steps used when this model is then used 
 in a new system may impact the resulting functional performance.  
 • 
 The shortcomings of a pre-trained model are likely to be inherited by those who reuse it and 
-may not be documented.  For example, inherited biases (see Section 2.4) may not be 
+may not be documented.  For example, inherited biases  may not be 
 apparent if there is a lack of documentation about the data used to train the model.  Also, if 
 the pre-trained model is not widely used, there are likely to be more unknown (or 
 undocumented) defects and more rigorous testing may be needed to mitigate this risk. 
@@ -273,78 +272,37 @@ explained in 9.1.1). In addition, if an AI-based system is known to contain a sp
 trained model (or is based on a specific pre-trained model), then vulnerabilities associated 
 with it may already be known by potential attackers. 
 Note that several of the above risks can be more easily mitigated by having thorough documentation 
-available for the pre-trained model (see Section 7.5). 
+available for the pre-trained model . 
 1.9 
 Standards, Regulations and AI 
 The Joint Technical Committee of IEC and ISO on information technology (ISO/IEC JTC1) prepares 
 international standards which contribute towards AI.  For example, a subcommittee on AI (ISO/IEC 
 JTC 1/SC42), was set up in 2017.  In addition, ISO/IEC JTC1/SC7, which covers software and system 
-engineering, has published a technical report on the “Testing of AI-based systems” [S01]. 
+engineering, has published a technical report on the “Testing of AI-based systems” . 
 Standards on AI are also published at the regional level (e.g., European standards) and the national 
 level. 
 The EU-wide General Data Protection Regulation (GDPR) came into effect in May 2018 and sets 
-obligations for data controllers with regards to personal data and automated decision-making [B06].  It 
+obligations for data controllers with regards to personal data and automated decision-making .  It 
 includes requirements to assess and improve AI system functional performance, including the 
 mitigation of potential discrimination, and for ensuring individuals’ rights to not be subjected to 
 automated decision-making.  The most important aspect of the GDPR from a testing perspective is 
 that personal data (including predictions) should be accurate.  This does not mean that every single 
 prediction made by the system must be accurate, but that the system should be accurate enough for 
 the purposes for which it is used. 
-The German national standards body (DIN) has also developed the AI Quality Metamodel ([S02], 
-[S03]). 
+The German national standards body (DIN) has also developed the AI Quality Metamodel (, 
+). 
 Standards on AI are also published by industry bodies.  For example, the Institute of Electrical and 
 Electronics Engineers (IEEE) is working on a range of standards on ethics and AI (The IEEE Global 
 Initiative for Ethical Considerations in Artificial Intelligence and Autonomous Systems). Many of these 
-standards are still in development at the time of writing. 
+standards are still in development at the time of writing.
 
 Where AI is used in safety-related systems, the relevant regulatory standards are applicable, such as 
-ISO 26262 [S04] and ISO/PAS 21448 (SOTIF) [S05] for automotive systems.  Such regulatory 
+ISO 26262  and ISO/PAS 21448 (SOTIF)  for automotive systems.  Such regulatory 
 standards are typically mandated by government bodies, and it would be illegal to sell a car in some 
 countries if the included software did not comply with ISO 26262.  Standards in isolation are voluntary 
 documents, and their use is normally only made mandatory by legislation or contract.  However, many 
 users of standards do so to benefit from the expertise of the authors and to create products that are of 
-higher quality. 
- 
-
-2 Quality Characteristics for AI-Based Systems – 105 
-minutes  
-Keywords 
-None 
-AI-Specific Keywords 
-Adaptability, algorithmic bias, autonomy, bias, evolution, explainability, explainable AI (XAI), flexibility, 
-inappropriate bias, interpretability, ML system, machine learning, reward hacking, robustness, sample 
-bias, self-learning system, side effects, transparency 
-Learning Objectives for Chapter 2: 
-2.1 Flexibility and Adaptability 
-AI-2.1.1 K2 
-Explain the importance of flexibility and adaptability as characteristics of AI-based 
-systems. 
-2.2 Autonomy 
-AI-2.2.1 K2 
-Explain the relationship between autonomy and AI-based systems. 
-2.3 Evolution 
-AI-2.3.1 K2 
-Explain the importance of managing evolution for AI-based systems. 
-2.4 Bias 
-AI-2.4.1 K2 
-Describe the different causes and types of bias found in AI-based systems. 
-2.5 Ethics 
-AI-2.5.1 K2 
-Discuss the ethical principles that should be respected in the development, 
-deployment and use of AI-based systems. 
-2.6 Side Effects and Reward Hacking 
-AI-2.6.1 K2 
-Explain the occurrence of side effects and reward hacking in AI-based systems. 
-2.7 Transparency, Interpretability and Explainability 
-AI-2.7.1 K2 
-Explain how transparency, interpretability and explainability apply to AI-based 
-systems. 
-2.8 Safety and AI 
-AI-2.8.1 K1 
-Recall the characteristics that make it difficult to use AI-based systems in safety-
-related applications. 
- 
- 
+higher quality.
 
 2.1 
 Flexibility and Adaptability 
@@ -372,7 +330,7 @@ Autonomy
 When defining autonomy, it is important to first recognize that a fully autonomous system would be 
 completely independent of human oversight and control. In practice, full autonomy is not often 
 desired.  For example, fully self-driving cars, which are popularly referred to as “autonomous”, are 
-officially classified as having “full driving automation” [B07]. 
+officially classified as having “full driving automation” . 
 Many consider autonomous systems to be “smart” or “intelligent”, which suggests they would include 
 AI-based components to perform certain functions.  For example, autonomous vehicles that need to 
 be situationally aware typically use several sensors and image processing to gather information about 
@@ -391,7 +349,7 @@ autonomous system must give control back to its human controllers.
 Evolution 
 In this syllabus, evolution is considered to be the ability of the system to improve itself in response to 
 changing external constraints.  Some AI systems can be described as self-learning and successful 
-self-learning AI-based systems need to incorporate this form of evolution. 
+self-learning AI-based systems need to incorporate this form of evolution.
 
 AI-based systems often operate in an evolving environment. As with other forms of IT systems, an AI-
 based system needs to be flexible and adaptable enough to cope with changes in its operational 
@@ -426,7 +384,7 @@ collected data, and these two components can introduce bias in the results:
 • 
 Algorithmic bias can occur when the learning algorithm is incorrectly configured, for example, 
 when it overvalues some data compared to others. This source of bias can be caused and 
-managed by the hyperparameter tuning of the ML algorithms (see Section 3.2). 
+managed by the hyperparameter tuning of the ML algorithms . 
 • 
 Sample bias can occur when the training data is not fully representative of the data space to 
 which ML is applied. 
@@ -438,14 +396,14 @@ Ethics is defined in the Cambridge Dictionary as:
 a system of accepted beliefs that control behavior, especially such a system based on morals   
 AI-based systems with enhanced capabilities are having a largely positive effect on people’s lives. As 
 these systems have become more widespread, concerns have been raised as to whether they are 
-used in an ethical manner.   
+used in an ethical manner.
 
 What is considered ethical can change over time and can also change among localities and cultures.  
 Care must be taken that the deployment of an AI-based system from one location to another 
 considers differences in stakeholder values. 
 National and international policies on the ethics of AI can be found in many countries and regions.  
 The Organisation for Economic Co-operation and Development issued its principles for AI, the first 
-international standards agreed by governments for the responsible development of AI, in 2019 [B08].  
+international standards agreed by governments for the responsible development of AI, in 2019 .  
 These principles were adopted by forty-two countries when they were issued and are also backed by 
 the European Commission.  They include practical policy recommendations as well as value-based 
 principles for the “responsible stewardship of trustworthy AI”. These are summarized as: 
@@ -467,11 +425,11 @@ accountable.
 2.6 
 Side Effects and Reward Hacking 
 Side effects and reward hacking can result in AI-based systems generating unexpected, and even 
-harmful, results when the system attempts to meet its goals [B09]. 
+harmful, results when the system attempts to meet its goals . 
 Negative side effects can result when the designer of an AI-based system specifies a goal that 
 “focuses on accomplishing some specific tasks in the environment but ignores other aspects of the 
 (potentially very large) environment, and thus implicitly expresses indifference over environmental 
-variables that might actually be harmful to change” [B09].  For example, a self-driving car with a goal 
+variables that might actually be harmful to change” .  For example, a self-driving car with a goal 
 of travelling to its destination in “as fuel-efficient and safe manner as possible” may achieve the goal, 
 but with the side effect of the passengers becoming extremely annoyed at the excessive time taken. 
 Reward hacking can result from an AI-based system achieving a specified goal by using a “clever” or 
@@ -487,12 +445,12 @@ changing predictions and decisions.
 Most users are presented with AI-based systems as “black boxes” and have little awareness of how 
 these systems arrive at their results. In some cases, this ignorance may even apply to the data 
 scientists who built the systems. Occasionally, users may not even be aware they are interacting with 
-an AI-based system. 
+an AI-based system.
 
 The inherent complexity of AI-based systems has led to the field of “Explainable AI” (XAI).  The aim of 
 XAI is for users to be able to understand how AI-based systems come up with their results, thus 
 increasing users’ trust in them. 
-According to The Royal Society [B10], there are several reasons for wanting XAI, including: 
+According to The Royal Society , there are several reasons for wanting XAI, including: 
 • 
 giving users confidence in the system 
 • 
@@ -508,7 +466,7 @@ understanding and verifying the outputs from a system
 • 
 autonomy, agency (making the user feel empowered), and meeting social values 
 This leads to the following three basic desirable XAI characteristics for AI-based systems from the 
-perspective of a stakeholder (see also Section 8.6): 
+perspective of a stakeholder : 
 • 
 Transparency: This is considered to be the ease with which the algorithm and training data 
 used to generate the model can be determined. 
@@ -538,41 +496,7 @@ self-learning
 lack of transparency, interpretability and explainability 
 • 
 lack of robustness 
-The challenges of testing several of these characteristics are covered in Chapter 8. 
-
-3 Machine Learning (ML) – Overview - 145 minutes 
-Keywords 
-None 
-AI-Specific Keywords 
-Association, classification, clustering, data preparation, ML algorithm, ML framework, ML functional 
-performance criteria, ML model, ML training data, ML workflow, model evaluation, model tuning, 
-outlier, overfitting, regression, reinforcement learning, supervised learning, underfitting, unsupervised 
-learning 
-Learning Objectives for Chapter 3: 
-3.1 Forms of ML 
-AI-3.1.1 K2 
-Describe classification and regression as part of supervised learning. 
-AI-3.1.2 K2 
-Describe clustering and association as part of unsupervised learning. 
-AI-3.1.3 K2 
-Describe reinforcement learning. 
-3.2 ML Workflow 
-AI-3.2.1 K2 
-Summarize the workflow used to create an ML system. 
-3.3 Selecting a Form of ML  
-AI-3.3.1 K3 
-Given a project scenario, identify an appropriate form of ML (from classification, 
-regression, clustering, association, or reinforcement learning). 
-3.4 Factors involved in ML Algorithm Selection 
-AI-3.4.1 K2 
-Explain the factors involved in the selection of ML algorithms. 
-3.5 Overfitting and Underfitting 
-AI-3.5.1 K2 
-Summarize the concepts of underfitting and overfitting. 
-HO-3.5.1 H0 
-Demonstrate underfitting and overfitting. 
- 
- 
+The challenges of testing several of these characteristics are covered in Chapter 8.
 
 3.1 
 Forms of ML 
@@ -600,7 +524,7 @@ Regression: This is when the problem requires the ML model to predict a numeric 
 using regression.  Predicting the age of a person based on input data about their habits or 
 predicting the future prices of stocks are examples of problems that use regression. 
 Note that the term regression, as used in the context of a ML problem, is different to its use in other 
-ISTQB® syllabi, such as [I01], where regression is used to describe the problem of software 
+ISTQB® syllabi, such as , where regression is used to describe the problem of software 
 modifications causing change-related defects. 
 3.1.2 Unsupervised Learning 
 In this kind of learning, the algorithm creates the ML model from unlabeled data during the training 
@@ -618,7 +542,7 @@ marketing.
 • 
 Association: This is when the problem requires interesting relationships or dependencies to 
 be identified among data attributes. For example, a product recommendation system may 
-identify associations based on customers’ shopping behavior. 
+identify associations based on customers’ shopping behavior.
 
 3.1.3 Reinforcement Learning 
 Reinforcement learning is an approach where the system (an “intelligent agent”) learns by interacting 
@@ -635,17 +559,17 @@ The activities in the machine learning workflow are:
 Understand the Objectives 
 The purpose of the ML model to be deployed needs to be understood and agreed with the 
 stakeholders to ensure alignment with business priorities.  Acceptance criteria (including ML 
-functional performance metrics – see Chapter 5) should be defined for the developed model.   
+functional performance metrics 
 Select a Framework 
 A suitable AI development framework should be selected based on the objectives, 
-acceptance criteria, and business priorities (see Section 1.5).   
+acceptance criteria, and business priorities .   
 Select & Build the Algorithm 
 An ML algorithm is selected based on various factors including the objectives, acceptance 
-criteria, and the available data (see Section 3.4).  The algorithm may be manually coded, but 
+criteria, and the available data .  The algorithm may be manually coded, but 
 it is often retrieved from a library of pre-written code.  The algorithm is then compiled to 
 prepare for training the model, if required. 
 Prepare & Test Data 
-Data preparation (see Section 4.1) comprises data acquisition, data pre-processing and 
+Data preparation  comprises data acquisition, data pre-processing and 
 feature engineering. Exploratory data analysis (EDA) may be performed alongside these 
 activities. 
 The data used by the algorithm and model will be based on the objectives and is used by all 
@@ -653,14 +577,14 @@ the activities in the “model generation and test” activity shown on Figure 1
 the system is a real-time trading system, the data will come from the trading market.   
 The data used to train, tune and test the model must be representative of the operational data 
 that will be used by the model.  In some cases, it is possible to use pre-gathered datasets for 
-the initial training of the model (e.g., see Kaggle datasets [R16]).  Otherwise, raw data 
+the initial training of the model (e.g., see Kaggle datasets ).  Otherwise, raw data 
 typically needs some pre-processing and feature engineering. 
-Testing of the data and any automated data preparation steps needs to be performed.  See 
+Testing of the data and any automated data preparation steps needs to be performed.  
 Section 7.2.1 for more details on input data testing. 
 Train the Model 
 The selected ML algorithm uses training data to train the model. 
 Some algorithms, such as those generating a neural network, read the training dataset 
-several times.  Each iteration of training on the training dataset is referred to as an epoch. 
+several times.  Each iteration of training on the training dataset is referred to as an epoch.
 
 Parameters defining the model structure (e.g., the number of layers of a neural network or the 
 depth of a decision tree) are passed to the algorithm.  These parameters are known as model 
@@ -683,11 +607,11 @@ The model may be tuned by hyperparameter tuning, where the training activity is 
 training), or attributes of the model are updated (e.g., the number of neurons in a neural 
 network or the depth of a decision tree). 
 The three activities of training, evaluation and tuning can be considered as comprising model 
-generation, as shown on Figure 1. 
+generation, 
 Test the Model 
 Once a model has been generated, (i.e., it has been trained, evaluated and tuned), it should 
 be tested against an independent test dataset set to ensure that the agreed ML functional 
-performance criteria are met (see Section 7.2.2).  The functional performance measures from 
+performance criteria are met .  The functional performance measures from 
 testing are also compared with those from evaluation, and if the performance of the model 
 with independent data is significantly lower than during evaluation, it may be necessary to 
 select a different model. 
@@ -697,12 +621,12 @@ performed. Typically, these tests are performed by the data engineer/scientist, 
 with sufficient knowledge of the domain and access to the relevant resources can also 
 perform these tests. 
 Deploy the Model 
-Once model development is complete, as shown on Figure 1, the tuned model typically needs 
+Once model development is complete, 
 to be re-engineered for deployment along with its related resources, including the relevant 
 data pipeline. This is normally achieved through the framework.  Targets might include 
-embedded systems and the cloud, where the model can be accessed via a web API.   
+embedded systems and the cloud, where the model can be accessed via a web API.
 
-Figure 1: ML Workflow 
+ML Workflow 
  
 Use the Model 
 Once deployed, the model is typically part of a larger AI-based system and can be used 
@@ -710,18 +634,18 @@ operationally.  Models may perform scheduled batch predictions at set time inter
 run on request in real time. 
 Monitor and Tune the Model 
 While the model is being used, its situation may evolve and the model may drift away from its 
-intended performance (see Sections 2.3 and 7.6).  To ensure that any drift is identified and 
+intended performance .  To ensure that any drift is identified and 
 managed, the operational model should be regularly evaluated against its acceptance criteria. 
 It may be deemed necessary to update the model settings to address the problem of drift or it 
 may be decided that re-training with new data is needed to create a more accurate or more 
-robust model. In this case a new model may be created and trained with updated training 
+robust model. In this case a new model may be created and trained with updated training
 
 data.  The new model may then be compared against the existing model using a form of A/B 
-testing (see Section 9.4). 
-The ML workflow shown in Figure 1 is a logical sequence. In practice, the workflow is applied in a 
+testing . 
+The ML workflow 
 manner where the steps are repeated iteratively (e.g., when the model is evaluated, it is often 
 necessary to return to the training step, and sometimes to data preparation).   
-The steps shown in Figure 1 do not include the integration of the ML model with the non-ML parts of 
+The steps 
 the overall system.  Typically, ML models cannot be deployed in isolation and need to be integrated 
 with the non-ML parts.  For example, in vision applications, there is a data pipeline that cleans and 
 modifies data before submitting it to the ML model.  Where the model is part of a larger AI-based 
@@ -770,7 +694,7 @@ the speed of training (and retraining) the model
 o 
 the speed of prediction (e.g., for real-time systems) 
 o 
-transparency, interpretability and explainability requirements 
+transparency, interpretability and explainability requirements
 
 • 
 The type of data available for training the model (e.g., some models might only work with 
@@ -808,46 +732,13 @@ linear model for non-linear data).
 3.5.3 Hands-On Exercise: Demonstrate Overfitting and Underfitting 
 Demonstrate the concepts of overfitting and underfitting on a model.  This could be demonstrated by 
 using a dataset that contains very little data (overfitting), and a dataset with poor feature correlations 
-(underfitting). 
-
-4 ML - Data – 230 minutes 
-Keywords 
-None 
-AI-Specific Keywords 
-Annotation, augmentation, classification model, data labelling, data preparation, ML training data, 
-supervised learning, test dataset, validation dataset 
-Learning Objectives for Chapter 4: 
-4.1 Data Preparation as part of the ML Workflow 
-AI-4.1.1 K2 
-Describe the activities and challenges related to data preparation. 
-HO-4.1.1 H2 
-Perform data preparation in support of the creation of an ML model. 
-4.2 Training, Validation and Test Datasets in the ML Workflow 
-AI-4.2.1 K2 
-Contrast the use of training, validation and test datasets in the development of an ML 
-model. 
-HO-4.2.1 H2 
-Identify training and test datasets and create an ML model. 
-4.3 Dataset Quality Issues 
-AI-4.3.1 K2 
-Describe typical dataset quality issues. 
-4.4 Data quality and its effect on the ML model 
-AI-4.4.1 K2 
-Recognize how poor data quality can cause problems with the resultant ML model. 
-4.5 Data Labelling for Supervised Learning 
-AI-4.5.1 K1 
-Recall the different approaches to the labelling of data in datasets for supervised 
-learning. 
-AI-4.5.2 K1 
-Recall reasons for the data in datasets being mislabeled. 
- 
- 
+(underfitting).
 
 4.1 
 Data Preparation as Part of the ML Workflow 
 Data preparation uses an average of 43% of the ML workflow effort and is probably the most 
 resource-intensive activity in the ML workflow. In comparison, model selection and building uses only 
-17% [R17].  Data preparation forms part of the data pipeline, which takes in raw data and outputs 
+17% .  Data preparation forms part of the data pipeline, which takes in raw data and outputs 
 data in a form that can be used to both train an ML model and for prediction by a trained ML model. 
 Data preparation can be considered to comprise the following activities: 
 Data acquisition 
@@ -861,7 +752,7 @@ determined.  For example, this could include the identification of the Internati
 Fund (IMF) as a source for financial data and the channels that will be used to submit the 
 data into the AI-based system.   
 • 
-Labelling: See Section 4.5. 
+Labelling: 
 The acquired data can be in various forms (e.g., numerical, categorical, image, tabular, text, time-
 series, sensor, geospatial, video, and audio). 
 Data pre-processing 
@@ -880,7 +771,7 @@ deviation of one. This normalization ensures that the data has a range between z
 • 
 Augmentation: This is used to increase the number of samples in a dataset. Augmentation 
 can also be used to include adversarial examples in the training data, providing robustness 
-against adversarial attacks (see 9.1).   
+against adversarial attacks .   
 • 
 Sampling: This involves selection of some part of the total available dataset so that patterns 
 in the larger dataset can be observed. This is typically done to reduce costs and the time 
@@ -893,7 +784,7 @@ involves the selection of those features which are most likely to contribute to 
 and prediction.  In practice, it often includes the removal features that are not expected (or 
 that are not wanted) to have any effect on the resultant model.  By removing irrelevant 
 information (noise), feature selection can reduce overall training times, prevent overfitting 
-(see Section 3.5.1), increase accuracy and make models more generalizable. 
+, increase accuracy and make models more generalizable.
 
 • 
 Feature extraction: This involves the derivation of informative and non-redundant features 
@@ -903,7 +794,7 @@ In parallel to these data preparation activities, exploratory data analysis (EDA
 out to support the overall data preparation task.  This includes performing data analysis to discover 
 trends inherent in the data and using data visualization to represent data in a visual format by plotting 
 trends in the data. 
-Although the above data preparation activities and sub-activities have been shown in a logical order, 
+Although the above data preparation activities and sub-activities have been 
 different projects may re-order them or only use a subset of them.  Some of the data preparation 
 steps, such as the identification of the data source, are performed just once and can be performed 
 manually. Other steps may be part of the operational data pipeline and normally work on live data. 
@@ -930,7 +821,7 @@ The costs associated with data preparation.
 Not giving sufficient priority to checking for defects introduced into the data pipeline during 
 data preparation. 
 • 
-The introduction of sample bias (see Section 2.4). 
+The introduction of sample bias . 
 4.1.2 Hands-On Exercise: Data Preparation for ML 
 For a given set of raw data, perform the applicable data preparation steps as outlined in Section 4.1 to 
 produce a dataset that will be used to create a classification model using supervised learning. 
@@ -944,7 +835,7 @@ ML frameworks
 • 
 Tools 
 • 
-A development environment 
+A development environment
 
 4.2 
 Training, Validation and Test Datasets in the ML Workflow 
@@ -979,17 +870,16 @@ the training and validation datasets. Training, validation and tuning are perfor
 split combinations to create multiple tuned models, and the overall model performance may be 
 calculated as the average across all runs.  There are various methods used for creating multiple split 
 combinations, which include split-test, bootstrap, K-fold cross validation and leave-one-out cross 
-validation (see [B02] for more details). 
+validation . 
 4.2.1 Hands-On Exercise: Identify Training and Test Data and Create an ML Model 
-Split the previously prepared data (see Section 4.1.2) into training, validation and test datasets. 
+Split the previously prepared data  into training, validation and test datasets. 
 Train and test a classification model using supervised learning with these datasets.   
 Explain the difference between evaluating/tuning and testing by comparing the accuracy achieved 
 with the validation and test datasets. 
 4.3 
 Dataset Quality Issues 
-Typical quality issues relating to the data in a dataset include, but are not limited to, those shown in 
-the following table: 
- 
+Typical quality issues relating to the data in a dataset include, but are not limited to, those 
+the following table:
 
 Quality Aspect  
 Description 
@@ -1011,7 +901,7 @@ for different algorithms).
 Data not pre-
 processed 
 Data should be pre-processed to ensure it is clean, in a consistent format and 
-contains no unwanted outliers (see Section 4.1). 
+contains no unwanted outliers . 
 Obsolete data 
 Data used for both learning and prediction should be current as possible (e.g., 
 using financial data from several years ago may well lead to inaccurate 
@@ -1036,8 +926,7 @@ Any data use should respect the relevant data privacy laws (e.g., GDPR with
 relation to individuals’ personal information in the European Union). 
 Security issues 
 Fraudulent or misleading data that has been deliberately inserted into the 
-training data may lead to inaccuracy in the trained model. 
- 
+training data may lead to inaccuracy in the trained model.
 
 4.4 
 Data Quality and its Effect on the ML Model 
@@ -1065,7 +954,7 @@ leakage of personal information.
 Data Labelling for Supervised Learning 
 Data labelling is the enrichment of unlabeled (or poorly labeled) data by adding labels, so it becomes 
 suitable for use in supervised learning.  Data labelling is a resource-intensive activity that has been 
-reported to use, on average, 25% of the time on ML projects [B11]. 
+reported to use, on average, 25% of the time on ML projects . 
 In its simplest form, data labelling can consist of putting images or text files in various folders, based 
 on their classes.  For example, putting all text files of positive product reviews into one folder and all 
 negative reviews into another folder.  Labelling objects in images by drawing rectangles around them 
@@ -1086,14 +975,14 @@ data and a decision then taken on the label to be used.
 • 
 AI-Assisted: AI-based tools are used to recognize and annotate data or to cluster similar data.  
 The results are then confirmed or perhaps supplemented (e.g., by modifying the bounding 
-box) by a human, as part of a two-step process.   
+box) by a human, as part of a two-step process.
 
 • 
 Hybrid: A combination of the above labelling approaches could be used. For example, 
 crowdsourced labelling is typically managed by an external organization which has access to 
 specialized AI-based crowd-management tools. 
 Where applicable, it may be possible to reuse a pre-labeled dataset, hence avoiding the need for data 
-labelling altogether.  Many such datasets are publicly available, for example, from Kaggle [R16]. 
+labelling altogether.  Many such datasets are publicly available, for example, from Kaggle . 
 4.5.2 Mislabeled Data in Datasets 
 Supervised learning assumes that the data is correctly labeled by the data annotators.  However, it is 
 rare in practice for all items in a dataset to be labeled correctly.  Data is mislabeled for the following 
@@ -1118,47 +1007,7 @@ Complex classification tasks can result in more errors being made.
 The tools used to support data labelling have defects that lead to incorrect labels. 
 • 
 ML-based approaches to labelling are probabilistic, and this can lead to some incorrect 
-labels. 
- 
-
-5 ML Functional Performance Metrics – 120 minutes 
-Keywords 
-None 
-AI-Specific Keywords 
-Accuracy, area under curve (AUC), confusion matrix, F1-score, inter-cluster metrics, intra-cluster 
-metrics, mean square error (MSE), ML benchmark suites, ML functional performance metrics, 
-precision, recall, receiver operating characteristic (ROC) curve, regression model, R-squared, 
-silhouette coefficient 
-Learning Objectives for Chapter 5: 
-5.1 
-Confusion Matrix 
-AI-5.1.1 K3 
-Calculate the ML functional performance metrics from a given set of confusion matrix 
-data. 
-5.2 
-Additional ML Functional Performance Metrics for Classification, Regression and 
-Clustering 
-AI-5.2.1 K2 
-Contrast and compare the concepts behind the ML functional performance metrics for 
-classification, regression and clustering methods. 
-5.3 
-Limitations of ML Functional Performance Metrics 
-AI-5.3.1 K2 
-Summarize the limitations of using ML functional performance metrics to determine 
-the quality of the ML system. 
-5.4 
-Selecting ML Functional Performance Metrics 
-AI-5.4.1 K4 
-Select appropriate ML functional performance metrics and/or their values for a given 
-ML model and scenario. 
-HO-5.4.1 H2 
-Evaluate the created ML model using selected ML functional performance metrics 
-5.5 
-Benchmark Suites for ML  
-AI-5.5.1 K2 
-Explain the use of benchmark suites in the context of ML  
- 
- 
+labels.
 
 5.1 
 Confusion Matrix 
@@ -1184,9 +1033,9 @@ False Negative
 True Negative 
 (TN) 
  
-Figure 2: Confusion Matrix 
+Confusion Matrix 
  
-Note that the confusion matrix shown in Figure 2 may be presented differently but will always 
+Note that the confusion matrix 
 generate values for the four possible situations of true positive (TP), true negative (TN), false positive 
 (FP) and false negative (FN). 
 Based on the confusion matrix, the following metrics are defined: 
@@ -1209,7 +1058,7 @@ F1-score
 F1-score = 2* (Precision * Recall) / (Precision + Recall) 
 F1-score is computed as the harmonic mean of precision and recall.  It will have a value 
 between zero and one.  A score close to one indicates that false data has little influence on 
-the result.  A low F1-score suggests that the model is poor at detecting positives. 
+the result.  A low F1-score suggests that the model is poor at detecting positives.
 
 5.2 
 Additional ML Functional Performance Metrics for Classification, 
@@ -1255,21 +1104,20 @@ means the clusters are wrongly assigned.
 Limitations of ML Functional Performance Metrics 
 ML functional performance metrics are limited to measuring the functionality of the model, e.g., in 
 terms of accuracy, precision, recall, MSE, AUC and the silhouette coefficient.  They do not measure 
-other non-functional quality characteristics, such as those defined in ISO 25010 [S06] (e.g., 
+other non-functional quality characteristics, such as those defined in ISO 25010  (e.g., 
 performance efficiency) and those described in Chapter 2, (e.g., explainability, flexibility, and 
 autonomy).  In this syllabus, the term “ML functional performance metrics” is used because of the 
 widespread use of the term “performance metrics” to refer to these functional metrics. Adding “ML 
 functional” highlights that these metrics are specific to machine learning and have no relationship to 
-performance efficiency metrics. 
+performance efficiency metrics.
 
 ML functional performance metrics are constrained by several other factors: 
 • 
 For supervised learning, the ML functional performance metrics are calculated on the basis of 
-labeled data, and the accuracy of the resultant metrics depends on correct labelling (see 
-Section 4.5). 
+labeled data, and the accuracy of the resultant metrics depends on correct labelling . 
 • 
 The data used for measurement may not be representative (e.g., it may be biased) and the 
-generated ML functional performance metrics depend on this data (see Section 2.4).  
+generated ML functional performance metrics depend on this data .  
 • 
 The system may comprise several components, but the ML functional performance metrics 
 only applies to the ML model.  For example, the data pipeline is not considered by the ML 
@@ -1311,7 +1159,7 @@ The AUC for the ROC curve may be used for supervised classification problems.
 MSE and R-squared may be used for supervised regression problems. 
 • 
 Inter-cluster metrics, intra-cluster metrics and the silhouette coefficient may be used for 
-unsupervised clustering problems. 
+unsupervised clustering problems.
 
 5.4.1 Hands-On Exercise: Evaluate the Created ML Model 
 Using the classification model trained in the previous exercise, calculate and display the values for 
@@ -1330,35 +1178,15 @@ such as 75% accuracy), and inference times (e.g., how fast a trained ML model ca
 inference).   
 ML benchmark suites are provided by several different organizations, such as: 
 • 
-MLCommons [R18]: This is a not-for-profit organization formed in 2020 and previously named 
+MLCommons : This is a not-for-profit organization formed in 2020 and previously named 
 ML Perf, which provides benchmarks for software frameworks, AI-specific processors and ML 
 cloud platforms. 
 • 
-DAWNBench [R19]: This is an ML benchmark suite from Stanford University. 
+DAWNBench : This is an ML benchmark suite from Stanford University. 
 • 
-MLMark [R20]: This is an ML benchmark suite designed to measure the performance and 
+MLMark : This is an ML benchmark suite designed to measure the performance and 
 accuracy of embedded inference from the Embedded Microprocessor Benchmark 
-Consortium. 
- 
-
-6 ML - Neural Networks and Testing – 65 minutes 
-Keywords 
-None 
-AI-Specific Keywords 
-Activation value, deep neural network (DNN), ML training data, multi-layer perceptron, neural network, 
-neuron coverage, perceptron, sign change coverage, sign-sign coverage, supervised learning, 
-threshold coverage, training data, value change coverage 
-Learning Objectives for Chapter 6: 
-6.1 Neural Networks 
-AI-6.1.1 K2 
-Explain the structure and function of a neural network including a DNN. 
-HO-6.1.1 H1 
-Experience the implementation of a perceptron. 
-6.2 Coverage Measures for Neural Networks 
-AI-6.2.1 K2 
-Describe the different coverage measures for neural networks. 
- 
- 
+Consortium.
 
 6.1 
 Neural Networks 
@@ -1368,7 +1196,7 @@ examples of the implementation of an artificial neural network and comprises a n
 just one layer (i.e., a single neuron).  It can be used for supervised learning of classifiers, which 
 decide whether an input belongs to a specific class or not. 
 Most current neural networks are considered to be deep neural networks because they comprise 
-several layers and can be considered as multi-layer perceptrons (see Figure 3). 
+several layers and can be considered as multi-layer perceptrons . 
  
  
 Figure 3 Structure of a deep neural network 
@@ -1379,11 +1207,11 @@ example, a value signifying the likelihood that the input image is a cat.  Betwe
 layers are hidden layers made up of artificial neurons, which are also known as nodes.  The neurons 
 in one layer are connected to each of the neurons in the next layer and there may be different 
 numbers of neurons in each successive layer.  The neurons perform computations and pass 
-information across the network from the input neurons to the output neurons. 
+information across the network from the input neurons to the output neurons.
 
 Figure 4 Computation performed by each neuron 
  
-As shown in Figure 4, the computation performed by each neuron (except those in the input layer) 
+As 
 generates what is known as the activation value. This value is calculated by running a formula (the 
 activation function) that receives as input the activation values from all the neurons in the previous 
 layer, the weights assigned to the connections between the neurons (these weights change as the 
@@ -1405,12 +1233,12 @@ Students will be led through an exercise demonstrating a Perceptron learning a s
 as an AND function. 
 The exercise should cover how a Perceptron learns by modifying weights across a number of epochs 
 until the error is zero. Various mechanisms may be used for this activity (e.g., spreadsheet, 
-simulation). 
+simulation).
 
 6.2 
 Coverage Measures for Neural Networks 
 Achieving white-box test coverage criteria (e.g., statement, branch, modified condition/decision 
-coverage (MC/DC) [I01] is mandatory for compliance with some safety-related standards [S07] when 
+coverage (MC/DC)  is mandatory for compliance with some safety-related standards  when 
 using traditional imperative source code, and is recommended by many test practitioners for other 
 critical applications.  Monitoring and improving coverage supports the design of new test cases, 
 leading to increased confidence in the test object.  
@@ -1429,7 +1257,7 @@ The following coverage criteria for neural networks have been proposed and appli
 to a variety of applications: 
 • 
 Neuron coverage: Full neuron coverage requires that each neuron in the neural network 
-achieves an activation value greater than zero [B12].  This is very easy to achieve in practice 
+achieves an activation value greater than zero .  This is very easy to achieve in practice 
 and research has shown that almost 100% coverage is achieved with very few test cases on 
 a variety of deep neural networks.  This coverage measure may be most useful as an alarm 
 signal when it is not achieved. 
@@ -1445,67 +1273,30 @@ coverage with a threshold set to zero, as some other researchers use the term �
 coverage” to mean neuron coverage with a threshold of zero.   
 • 
 Sign-Change coverage: To achieve full sign-change coverage, test cases need to cause each 
-neuron to achieve both positive and negative activation values [B13].   
+neuron to achieve both positive and negative activation values .   
 • 
 Value-Change coverage: To achieve full value-change coverage, test cases need to cause 
 each neuron to achieve two activation values, where the difference between the two values 
-exceeds some chosen value [B13]. 
+exceeds some chosen value . 
 • 
 Sign-Sign coverage: This coverage considers pairs of neurons in adjacent layers and the sign 
 taken by their activation values.  For a pair of neurons to be considered covered, a test case 
 needs to show that changing the sign of a neuron in the first layer causes the neuron in the 
 second layer to change its sign, while the signs of all other neurons in the second layer 
-remain unchanged [B13]. This is a similar concept to MC/DC coverage for imperative source 
+remain unchanged . This is a similar concept to MC/DC coverage for imperative source 
 code.  
 Researchers have reported on further coverage measures based on layers (although simpler than 
-sign-sign coverage), and a successful approach using nearest neighbor algorithms to identify 
+sign-sign coverage), and a successful approach using nearest neighbor algorithms to identify
 
 meaningful change in neighboring sets of neurons has been implemented in the TensorFuzz tool 
-[B14]. 
- 
- 
-
-7 Testing AI-Based Systems Overview – 115 minutes 
-Keywords 
-Input data testing, ML model testing 
-AI-Specific Keywords 
-AI component, automation bias, big data, concept drift, data pipeline, ML functional performance 
-metrics, training data 
-Learning Objectives for Chapter 7: 
-7.1 Specification of AI-Based Systems 
-AI-7.1.1 K2 
-Explain how system specifications for AI-based systems can create challenges in 
-testing. 
-7.2 Test Levels for AI-Based Systems 
-AI-7.2.1 K2 
-Describe how AI-based systems are tested at each test level 
-7.3 Test Data for Testing AI-Based Systems 
-AI-7.3.1 K1 
-Recall those factors associated with test data that can make testing AI-based 
-systems difficult. 
-7.4 Testing for Automation Bias in AI-Based Systems 
-AI-7.4.1 K2 
-Explain automation bias and how this affects testing. 
-7.5 Documenting an ML Model 
-AI-7.5.1 K2 
-Describe the documentation of an AI component and understand how documentation 
-supports the testing of AI-based systems. 
-7.6 Testing for Concept Drift 
-AI-7.6.1 K2 
-Explain the need for frequently testing the trained model to handle concept drift. 
-7.7 Selecting a Test Approach for an ML System 
-AI-7.7.1 K4 
-For a given scenario determine a test approach to be followed when developing an 
-ML system. 
- 
- 
+.
 
 7.1 
 Specification of AI-Based Systems 
 System requirements and design specifications are equally important for both AI-based systems and 
 conventional systems.  These specifications provide the basis for testers to check whether actual 
 system behavior aligns with the specified requirements.  However, if the specifications are incomplete 
-and lack testability, this introduces a test oracle problem (see Section 8.7). 
+and lack testability, this introduces a test oracle problem . 
 There are several reasons why the specification of AI-based systems can be particularly challenging: 
 • 
 In many AI-based systems projects, requirements are specified only in terms of high-level 
@@ -1535,23 +1326,22 @@ increased flexibility.  However, such flexibility can also create challenges in 
 documenting all the different ways in which such interactions might happen. 
 • 
 Quality characteristics specific to AI-based systems, such as adaptability, flexibility, evolution, 
-and autonomy, need to be considered and defined as part of requirements specification (see 
-Chapter 2).  The novelty of these characteristics can make them difficult to define and test. 
+and autonomy, need to be considered and defined as part of requirements specification .  The novelty of these characteristics can make them difficult to define and test. 
 7.2 
 Test Levels for AI-Based Systems 
 AI-based systems typically comprise both AI and non-AI components.  Non-AI components can be 
-tested using conventional approaches [I01], while AI components and systems containing AI 
+tested using conventional approaches , while AI components and systems containing AI 
 components may need to be tested differently in some respects, as described below.  For all test 
 levels that include the testing of AI components, it is important for the testing to be closely supported 
 by data engineers/scientists and domain experts. 
 A major difference from the test levels used for conventional software is the inclusion of two new 
 specialized test levels to explicitly handle the testing of the input data and the models used in AI-
-based systems [B15].  Most of this section is applicable to all AI-based systems, although some parts 
-are specifically focused on ML. 
+based systems .  Most of this section is applicable to all AI-based systems, although some parts 
+are specifically focused on ML.
 
 7.2.1 Input Data Testing 
 The objective of input data testing is to ensure that the data used by the system for training and 
-prediction is of the highest quality (see Section 4.3).  It includes the following: 
+prediction is of the highest quality .  It includes the following: 
 • 
 Reviews 
 • 
@@ -1571,14 +1361,14 @@ versions should also be considered.
 The objective of ML model testing is to ensure that the selected model meets any performance criteria 
 that may have been specified. This includes: 
 • 
-ML functional performance criteria (see Sections 5.1 and 5.2) 
+ML functional performance criteria  
 • 
 ML non-functional acceptance criteria that are appropriate for the model in isolation, such as 
 speed of training, speed of prediction, computing resources used, adaptability, and 
 transparency.   
 ML model testing also aims to determine that the choice of ML framework, algorithm, model, model 
 settings and hyperparameters is as close to optimal as possible.  Where appropriate, ML model 
-testing may also include testing to achieve white-box coverage criteria (see Section 6.2). The selected 
+testing may also include testing to achieve white-box coverage criteria . The selected 
 model is later integrated with other components, AI and non-AI. 
 7.2.3 Component Testing 
 Component testing is a conventional test level which is applicable to any non-model components, 
@@ -1588,7 +1378,7 @@ Component integration testing is a conventional test level which is conducted to
 system components (both AI and non-AI) interact correctly.  It tests that the inputs from the data 
 pipeline are received as expected by the model, and that any predictions produced by the model are 
 exchanged with the relevant system components (e.g., the user interface) and used correctly by them.  
-Where AI is provided as a service (see Section 1.7), it is normal to perform API testing of the provided 
+Where AI is provided as a service , it is normal to perform API testing of the provided 
 service as part of component integration testing. 
 7.2.5 System Testing 
 System testing is a conventional test level which is conducted to ensure that the complete system of 
@@ -1609,7 +1399,7 @@ sensors) may be tested as part of system testing.
 7.2.6 Acceptance Testing 
 Acceptance testing is a conventional test level and is used to determine whether the complete system 
 is acceptable to the customer.  For AI-based systems, the definition of acceptance criteria can be 
-challenging (see Section 8.8).  Where AI is provided as a service (see Section 1.7), acceptance 
+challenging .  Where AI is provided as a service , acceptance 
 testing may be needed to determine the suitability of the service for the intended system and whether, 
 for example, ML functional performance criteria have been sufficiently achieved. 
 7.3 
@@ -1641,10 +1431,10 @@ The first form of automation/complacency bias is when the human accepts recommen
 provided by the system and fails to consider inputs from other sources (including 
 themselves).  For example, a procedure where a human keys data into a form might be 
 improved by using machine learning to pre-populate the form, and the human then validates 
-this data.  It has been shown that this form of automation bias typically reduces the quality of 
+this data.  It has been shown that this form of automation bias typically reduces the quality of
 
 decisions made by 5%, but this could be much greater depending on the system context 
-[B16].  Similarly, the automatic correction of typed text (e.g., in mobile phone messages) is 
+.  Similarly, the automatic correction of typed text (e.g., in mobile phone messages) is 
 often faulty and could change the meaning. Users often do not notice this, and do not 
 override the mistake. 
 • 
@@ -1696,7 +1486,7 @@ flexibility and adaptability of the system.
 The source of any input data, including associated metadata. This needs to be clearly 
 understood when testing the following aspects: 
 o 
-Functional correctness of untrustworthy inputs 
+Functional correctness of untrustworthy inputs
 
 o 
 Explicit or implicit sample bias  
@@ -1721,8 +1511,7 @@ Systems that may be prone to concept drift should be regularly tested against th
 functional performance criteria, to ensure that any occurrences of concept drift are detected soon 
 enough for the problem to be mitigated.  Typical mitigations may include retiring the system or re-
 training the system. In the case of re-training, this would be performed with up-to-date training data 
-and followed by confirmation testing, regression testing, and possibly a form of A/B testing (see 
-Section 9.4), where the updated B-system must outperform the original A-system. 
+and followed by confirmation testing, regression testing, and possibly a form of A/B testing , where the updated B-system must outperform the original A-system. 
 7.7 
 Selecting a Test Approach for an ML System 
 An AI-based system will typically include both AI and non-AI components.  The test approach is 
@@ -1737,7 +1526,7 @@ Description and possible Mitigations
 Data quality may be lower 
 than expected. 
 This risk may become an issue in several ways, each of which may 
-be prevented in different manners (see Section 4.4). Common 
+be prevented in different manners . Common 
 mitigations include the use of reviews, EDA and dynamic testing. 
 The operational data pipeline 
 may be faulty. 
@@ -1750,11 +1539,11 @@ sub-optimal.
 This risk could be due to the following: 
 • 
 A lack of up-front agreement on the ML workflow to be 
-followed 
+followed
 
 Risk Aspect  
 Description and possible Mitigations 
-(See Section 3.2) 
+(
 • 
 A poor choice of workflow 
 • 
@@ -1805,14 +1594,14 @@ service.
 This risk could be due to a lack of focus on the system’s non-
 functional requirements).  Note that the range of quality 
 characteristics for AI-based systems extends beyond those listed in 
-ISO/IEC 25010 (see Chapter 2). 
+ISO/IEC 25010 . 
 Using a risk-based approach to prioritize the quality characteristics 
 and performing the relevant non-functional testing could mitigate this 
 risk. 
 Alternatively, the problem could be due to a combination of factors 
 that could be identified through experience-based testing, as part of 
 system testing. Chapter 8 provides guidance on how to test these 
-characteristics. 
+characteristics.
 
 Risk Aspect  
 Description and possible Mitigations 
@@ -1838,7 +1627,7 @@ not understanding how the
 system determines its 
 decisions 
 This risk could be due to a lack of explainability, interpretability 
-and/or transparency.  See Section 8.6 for details on how to test for 
+and/or transparency.  
 these characteristics. 
 Users may find that the 
 model provides excellent 
@@ -1846,52 +1635,10 @@ predictions when the data is
 similar to the training data but 
 provides poor results 
 otherwise. 
-This risk may be due to overfitting (see Section 3.5.1), which may be 
+This risk may be due to overfitting , which may be 
 detected by testing the model with a dataset that is completely 
 independent from the training dataset or performing experience-
-based testing. 
- 
-
-8 Testing AI-Specific Quality Characteristics – 150 
-minutes 
-Keywords  
-Test oracle 
-AI-Specific Keywords 
-Algorithmic bias, autonomous system, autonomy, expert system, explainability, inappropriate bias, 
-interpretability, LIME method, ML training data, non-deterministic system, probabilistic system, 
-sample bias, self-learning system, transparency 
-Learning Objectives for Chapter 8: 
-8.1 Challenges Testing Self-Learning Systems 
-AI-8.1.1 K2 
-Explain the challenges in testing created by the self-learning of AI-based systems. 
-8.2 Testing Autonomous AI-Based Systems 
-AI-8.2.1 K2 
-Describe how autonomous AI-based systems are tested 
-8.3 Testing for Algorithmic, Sample and Inappropriate Bias 
-AI-8.3.1 K2 
-Explain how to test for bias in an AI-based system. 
-8.4 Challenges Testing Probabilistic and Non-Deterministic AI-Based Systems 
-AI-8.4.1 K2 
-Explain the challenges in testing created by the probabilistic and non-deterministic 
-nature of AI-based systems. 
-8.5 Challenges Testing Complex AI-based Systems 
-AI-8.5.1 K2 
-Explain the challenges in testing created by the complexity of AI-based systems. 
-8.6 Testing the Transparency, Interpretability and Explainability of AI-based Systems 
-AI-8.6.1 K2 
-Describe how the transparency, interpretability and explainability of AI-based systems 
-can be tested. 
-HO-8.6.1 H2 
-Use a tool to show how explainability can be used by testers. 
-8.7 Test Oracles for AI-Based Systems 
-AI-8.7.1 K2 
-Explain the challenges in creating test oracles resulting from the specific 
-characteristics of AI-based systems. 
-8.8 Test Objectives and Acceptance Criteria 
-AI-8.8.1 K4 
-Select appropriate test objectives and acceptance criteria for the AI-specific quality 
-characteristics of a given AI-based system. 
- 
+based testing.
 
 8.1 
 Challenges Testing Self-Learning Systems 
@@ -1926,7 +1673,7 @@ learn and adapt, given different scenarios.  These acceptance criteria may be di
 specify and acquire.  If a system adapts quickly, there might be insufficient time to manually 
 execute new tests after each change, so it may be necessary to write tests that can be run 
 automatically when the system changes itself.  These challenges can be addressed through 
-the specification of appropriate acceptance criteria (see Section 8.8) and automated 
+the specification of appropriate acceptance criteria  and automated 
 continuous testing. 
 • 
 Resource requirements: The system requirements might include acceptance criteria for the 
@@ -1938,15 +1685,14 @@ challenge affects the specification of acceptance criteria.
 • 
 Insufficient specifications of operational environment: A self-learning system may change if 
 the environmental inputs that it receives are outside expected ranges, or if they are not 
-reflected in the training data.  These inputs may be attacks in the form of data poisoning (see 
-Section 9.1.2).  It can be difficult to predict the full range of operational environments and 
+reflected in the training data.  These inputs may be attacks in the form of data poisoning .  It can be difficult to predict the full range of operational environments and 
 environmental changes, and to therefore identify the full set of representative test cases and 
 environmental requirements.  Ideally, the full scope of possible changes in the operational 
 environment to which the system is expected to respond will be defined as acceptance 
 criteria. 
 • 
 Complex test environment: Managing the test environment to ensure it can mimic all the 
-potential high-risk operational environment changes is a challenge and may involve the use of 
+potential high-risk operational environment changes is a challenge and may involve the use of
 
 test tools (e.g., a fault injection tool).  Depending on the nature of the operating environment, 
 this may be tested by manipulating inputs and sensors, or by obtaining access to different 
@@ -1987,8 +1733,7 @@ inappropriate bias.
 Testing with an independent dataset can often detect bias.  However, it can be difficult to identify all 
 the data that causes bias because the ML algorithm can use combinations of seemingly unrelated 
 features to create unwanted bias.  
-AI-based systems should be tested for algorithmic bias, sample bias and inappropriate bias (see 
-Section 2.4).  This may involve: 
+AI-based systems should be tested for algorithmic bias, sample bias and inappropriate bias .  This may involve: 
 • 
 Analysis during the model’s training, evaluation and tuning activities to identify whether 
 algorithmic bias is present.  
@@ -1997,7 +1742,7 @@ Reviewing the source of the training data and the processes used to acquire it, 
 presence of sample bias can be identified. 
 • 
 Reviewing the pre-processing of data as part of the ML workflow to identify whether the data 
-has been affected in a way that could cause sample bias. 
+has been affected in a way that could cause sample bias.
 
 • 
 Measuring how changes in system inputs affect system outputs over a large number of 
@@ -2044,17 +1789,17 @@ a statistically valid test result.
 Challenges Testing Complex AI-Based Systems 
 AI-based systems are often used to implement tasks that are too complex for humans to perform.  
 This can lead to a test oracle problem because testers are unable to determine the expected results 
-as they would normally do (see Section 8.7).  For example, AI-based systems are often used to 
+as they would normally do .  For example, AI-based systems are often used to 
 identify patterns in large volumes of data.  Such systems are used because they can find patterns that 
 humans, even after much analysis, simply cannot find manually. Understanding the required behavior 
 of such systems in sufficient depth to be able to generate expected results can be challenging. 
 A similar problem arises when the internal structure of an AI-based system is generated by software, 
-making it too complex for humans to understand.  This leads to the situation where the AI-based 
+making it too complex for humans to understand.  This leads to the situation where the AI-based
 
 system can only be tested as a black box.  Even when the internal structure is visible, this provides no 
 additional useful information to help with the testing. 
 The complexity of AI-based systems increases when they provide probabilistic results and are non-
-deterministic in nature (see Section 8.4). 
+deterministic in nature . 
 The problems with non-deterministic systems are exacerbated when an AI-based system consists of 
 several interacting components, each providing probabilistic results.  For example, a facial recognition 
 system is likely to use one model to identify a face within an image, and a second model to recognize 
@@ -2093,7 +1838,7 @@ technology.
 Measuring and testing the level of understanding for both interpretability and explainability can be 
 challenging as stakeholders will vary in their levels of ability and may not agree.  In addition, 
 identifying the profile of typical stakeholders may be difficult for many types of systems. Where 
-performed, this testing typically takes the form of user surveys and/or questionnaires. 
+performed, this testing typically takes the form of user surveys and/or questionnaires.
 
 8.6.1 Hands-On Exercise: Model Explainability 
 Use an appropriate tool to provide explainability based on the previously created model.  For 
@@ -2104,14 +1849,14 @@ features in the inputs influence the outputs.
 8.7 
 Test Oracles for AI-Based Systems 
 A major problem with the testing of AI-based systems can be the specification of expected results.  A 
-test oracle is the source used to determine the expected result of a test [I01]. A challenge in 
+test oracle is the source used to determine the expected result of a test . A challenge in 
 determining expected results is known as the test oracle problem. 
 With complex, non-deterministic or probabilistic systems, it can be difficult to establish a test oracle 
 without knowing the “ground truth” (i.e., the actual result in the real world that the AI-based system is 
 trying to predict).  This “ground truth” is distinct from a test oracle, in that a test oracle may not 
 necessarily provide an expected value, but only a mechanism with which to determine whether the 
 system is operating correctly or not.   
-AI-based systems can evolve (see Section 2.3), and the testing of self-learning systems (see Section 
+AI-based systems can evolve , and the testing of self-learning systems (see Section 
 8.1) can also suffer from test oracle problems as they modify themselves and can thereby make it 
 necessary to frequently update the functional expectations of the system. 
 A further cause of difficulty in obtaining an effective test oracle is that in many cases, the correctness 
@@ -2137,13 +1882,13 @@ Humans are more likely to caveat responses (e.g., with phrases like “I’m not
 this kind of caveat is not available to the AI-based system, this should be considered when 
 comparing the responses. 
 Test techniques exist which can alleviate the test oracle problem, such as A/B testing (see Section 
-9.4), back-to-back testing (see Section 9.3) and metamorphic testing (see Section 9.5). 
+9.4), back-to-back testing  and metamorphic testing . 
 8.8 
 Test Objectives and Acceptance Criteria 
 Test objectives and acceptance criteria for a system need to be based on the perceived product risks.  
-These risks can often be identified from an analysis of the required quality characteristics.  The quality 
+These risks can often be identified from an analysis of the required quality characteristics.  The quality
 
-characteristics for an AI-based system include those traditionally considered in ISO/IEC 25010 [S06] 
+characteristics for an AI-based system include those traditionally considered in ISO/IEC 25010  
 (i.e., functional suitability, performance efficiency, compatibility, usability, reliability, security, 
 maintainability, and portability) but should also include a consideration of the following aspects: 
  
@@ -2204,9 +1949,9 @@ testing).
 Ethics 
 • 
 Check the system against a suitable checklist, such as the EC 
-Assessment List for Trustworthy Artificial Intelligence [R21], which 
+Assessment List for Trustworthy Artificial Intelligence , which 
 supports the key requirements outlined by the Ethics Guidelines for 
-Trustworthy Artificial Intelligence (AI) [R22]. 
+Trustworthy Artificial Intelligence (AI) .
 
 Aspect  
 Acceptance Criteria 
@@ -2230,52 +1975,11 @@ being tested.
 Safety 
 • 
 This needs to carefully evaluated, perhaps in a virtual test environment 
-(see Section 10.2). This could include attempts to force a system to 
+. This could include attempts to force a system to 
 cause itself harm. 
  
 For ML systems, the required ML functional performance metrics for the ML model should be 
-specified (see Chapter 5). 
-
-9 Methods and Techniques for the Testing of AI-Based 
-Systems – 245 minutes 
-Keywords 
-A/B testing, adversarial testing, back-to-back testing, error guessing, experience-based testing, 
-exploratory testing, metamorphic relation (MR), metamorphic testing (MT), pairwise testing, pseudo-
-oracle, test oracle problem, tours 
-AI-Specific Keywords 
-Adversarial attack, adversarial example, data poisoning, ML system, trained model 
-Learning Objectives for Chapter 9: 
-9.1 Adversarial Attacks and Data Poisoning 
-AI-9.1.1 K2 
-Explain how the testing of ML systems can help prevent adversarial attacks and data 
-poisoning. 
-9.2 Pairwise Testing 
-AI-9.2.1 K2 
-Explain how pairwise testing is used for AI-based systems. 
-LO-9.2.1 H2 
-Apply pairwise testing to derive and execute test cases for an AI-based system. 
-9.3 Back-to-Back Testing 
-AI-9.3.1 K2 
-Explain how back-to-back testing is used for AI-based systems. 
-9.4 A/B Testing 
-AI-9.4.1 K2 
-Explain how A/B testing is applied to the testing of AI-based systems. 
-9.5 Metamorphic Testing 
-AI-9.5.1 K3 
-Apply metamorphic testing for the testing of AI-based systems. 
-HO-9.5.1 H2 
-Apply metamorphic testing to derive test cases for a given scenario and execute 
-them. 
-9.6 Experience-Based Testing of AI-Based Systems 
-AI-9.6.1 K2 
-Explain how experience-based testing can be applied to the testing of AI-based 
-systems. 
-HO-9.6.1 H2 
-Apply exploratory testing to an AI-based system. 
-9.7 Selecting Test Techniques for AI-Based Systems 
-AI-9.7.1 K4 
-For a given scenario, select appropriate test techniques when testing an AI-based 
-system. 
+specified .
 
 9.1 
 Adversarial Attacks and Data Poisoning 
@@ -2287,7 +1991,7 @@ email without losing readability.  Recently, they have become more associated wi
 By simply changing a few pixels which are invisible to the human eye, it is possible to persuade a 
 neural network to change its image classification to a very different object and with a high degree of 
 confidence.   
-Adversarial examples are generally transferable [B17], which means that an adversarial example 
+Adversarial examples are generally transferable , which means that an adversarial example 
 which causes one ML system to fail will often cause another ML system to fail that is trained to 
 perform the same task.  Even when the second ML system has been trained with different data and is 
 based on different architectures, it is often still prone to failure with the same adversarial examples. 
@@ -2319,11 +2023,11 @@ small number of harmful Twitter conversations trained the system through feedbac
 conversations in the future.  A commonly used form of data poisoning attack uses the false reporting 
 of millions of spam emails as not being spam in an attempt to skew spam filtering software.  An area 
 of concern with data poisoning is the potential for public, widely used AI datasets to become 
-poisoned. 
+poisoned.
 
 Testing to detect data poisoning is possible using EDA, as poisoned data may show up as outliers. In 
 addition, data acquisition policies can be reviewed to ensure the provenance of training data.  Where 
-an operational ML system may be attacked by feeding it poisoned data, A/B testing (see Section 9.4) 
+an operational ML system may be attacked by feeding it poisoned data, A/B testing  
 could be used to check that the updated version of the system is still closely aligned with the previous 
 version.  Alternatively, regression testing of an updated system using a trusted test suite may also 
 determine if a system has been poisoned. 
@@ -2337,12 +2041,12 @@ used to select a subset that can be run in the limited time available.
 Where it is possible to combine numerous parameters, each of which may have many discrete 
 values, combinatorial testing can be applied to significantly reduction the number of test cases 
 required, ideally without compromising the defect detection capability of the test suite.  There are 
-several combinatorial testing techniques (see [I02] and [S08]). However, in practice, pairwise testing 
+several combinatorial testing techniques . However, in practice, pairwise testing 
 is the most widely used technique because it is easy to understand, has ample tool support. In 
 addition, research has shown that most defects are caused by interactions involving few parameters 
-[B33].  
+.  
 In practice, even the use of pairwise testing can result in extensive test suites for some systems, and 
-the use of automation and virtual test environments (see Section 10.2) often becomes necessary to 
+the use of automation and virtual test environments  often becomes necessary to 
 allow the necessary number of tests to be run.  For example, when considering self-driving cars, high-
 level test scenarios for system testing need to exercise both the different environments in which the 
 cars are expected to operate and the various vehicle functions.  Thus, the parameters would need to 
@@ -2361,11 +2065,11 @@ and execute tests for these combinations.  Compare the number of pairwise combin
 the number required if all theoretically possible combinations were to be tested. 
 9.3 
 Back-to-Back Testing 
-One of the potential solutions to the test oracle problem (see Section 8.7) when testing AI-based 
+One of the potential solutions to the test oracle problem  when testing AI-based 
 systems is to use back-to-back testing.  This is also known as differential testing.  With back-to-back 
 testing, an alternative version of the system is used as a pseudo-oracle and its outputs compared with 
 the test results produced by the SUT.  The pseudo-oracle could be an existing system, or it could be 
-developed by a different team, possibly on a different platform, with a different architecture and with a 
+developed by a different team, possibly on a different platform, with a different architecture and with a
 
 different programming language. When testing the functional suitability (as opposed to non-functional 
 requirements), the system used as a pseudo-oracle is not constrained to achieve the same non-
@@ -2409,9 +2113,9 @@ One major difference between A/B testing and back-to-back testing relates to the
 compare two variants of the same system and the use of back-to-back testing to detect defects.  
 9.5 
 Metamorphic Testing (MT) 
-Metamorphic testing [B18] is a technique aimed at generating test cases which are based on a source 
+Metamorphic testing  is a technique aimed at generating test cases which are based on a source 
 test case that has passed.  One or more follow-up test cases are generated by changing 
-(metamorphizing) the source test case based on a metamorphic relation (MR).  The MR is based on a 
+(metamorphizing) the source test case based on a metamorphic relation (MR).  The MR is based on a
 
 property of a required function of the test object, such that it describes how a change in a test case’s 
 test inputs are reflected in the same test case’s expected results. 
@@ -2454,11 +2158,11 @@ but are relative to the expected results in the source test case.  It is based o
 concept, can be applied by testers with little experience of applying the technique but who understand 
 the application domain, and has similar costs compared to traditional techniques.  It is also effective at 
 revealing defects, with research showing that only three to six diverse MRs can reveal over 90% of 
-the defects that could be detected using techniques based on a traditional test oracle [B19].  It is 
+the defects that could be detected using techniques based on a traditional test oracle .  It is 
 possible to automatically generate follow-up test cases from well-specified MRs and a source test 
 case. However, commercial tools are not currently available, although Google is already applying 
 automated MT to test Android graphics drivers using the GraphicsFuzz tool, which has been open 
-sourced (see [R23]). 
+sourced .
 
 9.5.1 Hands-On Exercise: Metamorphic Testing 
 In this exercise, students will gain practical experience of the following: 
@@ -2477,7 +2181,7 @@ Running the follow-up test cases.
 9.6 
 Experience-Based Testing of AI-Based Systems 
 Experience-based testing includes error guessing, exploratory testing, and checklist-based testing 
-[I01], all of which can be applied to the testing of AI-based systems. 
+, all of which can be applied to the testing of AI-based systems. 
 Error guessing is typically based on testers knowledge, typical developer errors, and failures in similar 
 systems (or previous versions).  An example of error guessing applied to AI-based systems could be 
 the use of knowledge about how ML systems have in the past failed due to the use of systemically 
@@ -2486,10 +2190,9 @@ In exploratory testing, tests are designed, generated, and executed in an iterat
 opportunity for later tests to be derived, based on the test results of earlier tests.  Exploratory testing 
 is especially useful when there are poor specifications or test oracle problems, which is often the case 
 for AI-based systems. As a result, exploratory testing is often used in this context and should be used 
-to supplement the more systematic testing based on techniques, such as metamorphic testing (see 
-Section 9.5).   
+to supplement the more systematic testing based on techniques, such as metamorphic testing .   
 A tour is a metaphor used for a set of strategies and goals for testers to refer to when they perform 
-exploratory testing organized around a special focus [B20].  Typical tours for the exploratory testing of 
+exploratory testing organized around a special focus .  Typical tours for the exploratory testing of 
 AI-based systems might focus on the concepts of bias, underfitting and overfitting in ML systems.  For 
 example, a data tour might be applied to test the model. In this tour the tester could identify different 
 types of data used for training, their distribution, their variations, their format and ranges, etc., and 
@@ -2497,18 +2200,18 @@ then use the data types to test the model.
 ML systems are highly dependent on the quality of training data, and the existing field of EDA is 
 closely related to the exploratory testing approach.  EDA is where data are examined for patterns, 
 relationships, trends and outliers. It involves the interactive, hypothesis-driven exploration of data and 
-is described in [B21] as “We explore data with expectations.  We revise our expectations based on 
+is described in  as “We explore data with expectations.  We revise our expectations based on 
 what we see in the data.  And we iterate this process.” EDA typically requires tool support in two 
 areas; for interaction with the data, to allow analysts to better understand complex data, and for data 
 visualization, to allow them to easily display analysis results.  The use of exploratory techniques, 
 primarily driven by data visualization, can help validate the ML algorithm being used, identify changes 
-that result in efficient models, and leverage domain expertise [B22]. 
+that result in efficient models, and leverage domain expertise . 
 Google has a set of twenty-eight ML tests written as assertions, in the areas of data, model 
 development, infrastructure and monitoring, which is used as a testing checklist within Google for ML 
-systems [B23].  The Google “ML test checklist” is presented here as published by Google: 
+systems .  The Google “ML test checklist” is presented here as published by Google: 
 ML Data: 
 1. 
-Feature expectations are captured in a schema. 
+Feature expectations are captured in a schema.
 
 2. 
 All features are beneficial. 
@@ -2570,7 +2273,7 @@ Prediction quality has not regressed.
 9.6.1 Hands-On Exercise: Exploratory Testing and Exploratory Data Analysis (EDA) 
 For a selected model and dataset, students will perform a data tour, considering various types of data 
 and their distribution for various parameters.   
-Students will perform EDA on the data to identify missing data and/or potential bias in the data. 
+Students will perform EDA on the data to identify missing data and/or potential bias in the data.
 
 9.7 
 Selecting Test Techniques for AI-Based Systems 
@@ -2605,27 +2308,7 @@ of the data used for training and operational data.  EDA can be used to validate
 being used, identify efficiency improvements, and leverage domain expertise. Google have found that 
 their ML test checklist is an effective approach for ML systems. 
 In the specific area of neural networks, coverage of the network is often suitable for mission-critical 
-systems, with some coverage criteria requiring more rigorous coverage than others. 
- 
- 
-
-10 Test Environments for AI-Based Systems – 30 minutes 
-Keywords 
-Virtual test environment 
-AI-Specific Keywords 
-AI-specific processor, autonomous system, big data, explainability, multi-agent system, self-learning 
-system 
-Learning Objectives for Chapter 10: 
-10.1 Test Environments for AI-Based Systems 
-AI-10.1.1 K2 
-Describe the main factors that differentiate the test environments for AI-based 
-systems from those required for conventional systems. 
-10.2 Virtual Test Environments for Testing AI-Based Systems 
-AI-10.2.1 K2 
-Describe the benefits provided by virtual test environments in the testing of AI-based 
-systems. 
- 
- 
+systems, with some coverage criteria requiring more rigorous coverage than others.
 
 10.1 Test Environments for AI-Based Systems 
 AI-based systems can be used in a wide variety of operational environments, which means that the 
@@ -2634,14 +2317,14 @@ environments to differ from those for conventional systems include:
 • 
 Self-learning:  Self-learning systems, and some autonomous systems, are expected to adapt 
 to changing operational environments that may not have been fully defined when the system 
-was initially deployed (see Section 2.1).  As a result, defining test environments that can 
+was initially deployed .  As a result, defining test environments that can 
 mimic these undefined environmental changes is inherently difficult and may require both 
 imagination on the part of the testers and a level of randomness built into the test 
 environment.   
 • 
 Autonomy: Autonomous systems are expected to respond to changes in their environment 
 without human intervention, and also recognize situations where autonomy should be ceded 
-back to human operators (see Section 2.2).  For some systems, identifying and then 
+back to human operators .  For some systems, identifying and then 
 mimicking the circumstances for ceding autonomy may require the test environments to push 
 the systems to extremes.  For some autonomous systems, their purpose is to work in 
 environments that are hazardous, and setting up representative, hazardous test environments 
@@ -2653,17 +2336,17 @@ so that it can mimic the non-determinism of the AI-based systems with which the 
 interacts.  
 • 
 Explainability: The nature of some AI-based systems can make it difficult to determine how 
-the system made its decisions (see Section 2.7).  Where this is important to understand prior 
+the system made its decisions .  Where this is important to understand prior 
 to deployment, the test environment may need to incorporate tools as a means of explaining 
 how decisions are made. 
 • 
 Hardware: Some of the hardware used to host AI-based systems is specifically designed for 
-this purpose, such as AI-specific processors (see Section 1.6).  The need to include such 
+this purpose, such as AI-specific processors .  The need to include such 
 hardware in the test environment should be considered as part of the relevant test planning. 
 • 
 Big data: Where an AI-based system is expected to consume big data (e.g., high-volume, 
 high-velocity and/or high-variety data), then setting this up as part of a test environment 
-needs careful planning and implementation (see Section 7.3). 
+needs careful planning and implementation . 
 10.2 Virtual Test Environments for Testing AI-Based Systems 
 The use of a virtual test environment when testing an AI-based system brings the following benefits: 
 • 
@@ -2677,7 +2360,7 @@ Similarly, edge cases, which are difficult to create in the real world, can be c
 easily, repeatedly and reproducibly in a virtual test environment. 
 • 
 Extreme scenarios: These can be tested when it would be expensive or impossible to set 
-these up in reality (e.g., for a nuclear disaster or deep space exploration).   
+these up in reality (e.g., for a nuclear disaster or deep space exploration).
 
 • 
 Time-intensive scenarios: These can be tested in reduced timescales (e.g., several times per 
@@ -2699,48 +2382,22 @@ developed to support specific application domains.  Both commercially and open-s
 environments are available to support the testing of AI-based systems.  Examples include: 
 • 
 Morse: The Modular Open Robots Simulation Engine, is a simulator for generic mobile robot 
-simulation of single or multi robots, based on the Blender game engine [R24].  
+simulation of single or multi robots, based on the Blender game engine .  
 • 
 AI Habitat: This is a simulation platform created by Facebook AI, designed to train embodied 
-agents (such as virtual robots) in photo-realistic 3D environments [R25].  
+agents (such as virtual robots) in photo-realistic 3D environments .  
 • 
 DRIVE Constellation: This is an open and scalable platform for self-driving cars from NVIDIA. 
 It is based on a cloud-based platform and is capable of generating billions of miles of 
-autonomous vehicle testing [R26]. 
+autonomous vehicle testing . 
 • 
 MATLAB and Simulink: These provide the ability to prepare training data, produce ML models 
 and simulate the execution of AI-based systems including the models using synthetic data 
-[R27]. 
- 
- 
-
-11 Using AI for Testing – 195 minutes 
-Keywords 
-Visual testing 
-AI-Specific Keywords 
-Bayesian techniques, classification, clustering algorithm, defect prediction, graphical user interface 
-(GUI) 
-Learning Objectives for Chapter 11: 
-11.1 AI Technologies for Testing 
-AI-11.1.1 K2 Categorize the AI technologies used in software testing. 
-HO-11.1.1 H2 Discuss, using examples, those activities in testing where AI is less likely to be used. 
-11.2 Using AI to Analyze Reported Defects 
-AI-11.2.1 K2 Explain how AI can assist in supporting the analysis of new defects. 
-11.3 Using AI for Test Case Generation 
-AI-11.3.1 K2 Explain how AI can assist in test case generation. 
-11.4 Using AI for the Optimization of Regression Test Suites 
-AI-11.4.1 K2 Explain how AI can assist in optimization of regression test suites 
-11.5 Using AI for Defect Prediction 
-AI-11.5.1 K2 Explain how AI can assist in defect prediction. 
-HO-11.5.1 H2 Implement a simple AI-based defect prediction system. 
-11.6 Using AI for Testing User Interfaces 
-AI-11.6.1 K2 Explain the use of AI in testing user interfaces 
- 
- 
+.
 
 11.1 AI Technologies for Testing 
 Several AI technologies are listed in Section1.4, all of which can be used to support some specific 
-aspect of software testing.  According to Harman [B24], the software engineering community uses 
+aspect of software testing.  According to Harman , the software engineering community uses 
 three broad areas of AI technologies: 
 • 
 Fuzzy logic and probabilistic methods: These involve the use of AI techniques to handle real 
@@ -2752,13 +2409,13 @@ interactions with the system.
 Classification, learning and prediction: This can be used for various use cases such as 
 predicting costs as part of project planning or of predicting defects. As embodied by ML, this 
 area is used for many software testing tasks, including defect management (see Section 
-11.2), defect prediction (see Section 11.5), and user interface testing (see Section 11.6). 
+11.2), defect prediction , and user interface testing . 
 • 
 Computational search and optimization techniques: These can be used to solve optimization 
 problems using a computational search of potentially large and complex search spaces (e.g., 
-using search algorithms).  Examples include generating test cases (see Section 11.3), 
+using search algorithms).  Examples include generating test cases , 
 identifying the smallest number of test cases that achieves a given coverage criterion, and 
-optimizing regression test cases (see Section 11.4). 
+optimizing regression test cases . 
 The above categorization is necessarily broad, as there is considerable overlap between the testing 
 tasks that can be implemented by AI and the different AI technologies.  It is also just one 
 categorization, and others could be created that may be equally valid. 
@@ -2776,16 +2433,16 @@ challenging stakeholder assumptions and asking uncomfortable questions.
 • 
 understanding user needs. 
 A distinction should be drawn between weak AI, which could be used for some limited tasks, and 
-general AI, which is currently not available (see Section 1.2). 
+general AI, which is currently not available . 
  
 11.2 Using AI to Analyze Reported Defects 
 Reported defects are usually categorized, prioritized, and any duplicates identified.  This activity is 
 often referred to as defect triage or analysis and is intended to optimize the elapsed time spent in 
 defect resolution.  AI can be used to support this activity in various ways, such as: 
 • 
-Categorization: NLP [B25] can be used to analyze text within defect reports and extract 
+Categorization: NLP  can be used to analyze text within defect reports and extract 
 topics, such as the area of affected functionality, that can then be provided alongside other 
-meta data to clustering algorithms, such as k-nearest neighbors or support vector machines.  
+meta data to clustering algorithms, such as k-nearest neighbors or support vector machines.
 
 These algorithms can identify suitable defect categories and highlight similar or duplicate 
 defects.  AI-based categorization is particularly useful for automated defect reporting systems 
@@ -2794,7 +2451,7 @@ engineers.
 • 
 Criticality: ML models trained on the features of the most critical defects can be used to 
 identify those defects most likely to cause those system failures that account for a large 
-percentage of reported defects [B26]. 
+percentage of reported defects . 
 • 
 Assignment: ML models can suggest which developers are best suited to fix particular 
 defects, based on the defect content and previous developer assignments. 
@@ -2803,17 +2460,17 @@ The use of AI to generate tests can be a very effective technique for quickly cr
 maximizing coverage (e.g., code or requirements coverage).  The basis for generating these tests 
 includes the source code, the user interface, and a machine-readable test model.  Some tools also 
 base tests on the observation of the low-level behavior of the system through instrumentation or 
-through log files [B27]. 
+through log files . 
 However, unless a test model that defines required behaviors is used as the basis of the tests, this 
 form of test generation generally suffers from a test oracle problem because the AI-based tool does 
 not know what the expected results should be for a given set of test data.  One solution is to use 
-back-to-back testing if a suitable system is available to use as a pseudo-oracle (see Section 9.3).  
+back-to-back testing if a suitable system is available to use as a pseudo-oracle .  
 Alternatively, tests could be run with the expected result that neither an “application not responding” 
 nor a system crash occurred, or other similar simple failure indicators. 
 Research comparing AI-based test generation tools with similar non-AI fuzz testing tools shows that 
 the AI-based tools can achieve equivalent levels of coverage and find more defects while reducing the 
 average sequence of steps needed to cause a failure from an average of around 15,000 steps to 
-around 100 steps. This makes debugging far easier [B27]. 
+around 100 steps. This makes debugging far easier . 
 11.4 Using AI for the Optimization of Regression Test Suites 
 As changes are made to a system, new tests are created, executed and become candidates for a 
 regression test suite.  To prevent regression test suites from growing too large, they should be 
@@ -2824,11 +2481,11 @@ information from previous test results, associated defects, and the latest chang
 made, such as features which are broken more frequently and which tests exercise code impacted by 
 recent changes. 
 Research shows that reductions of 50% in the size of a regression test suite can be achieved while 
-still detecting most defects [B28], and reductions of 40% in the test execution duration can be reached 
-without significant reduction in fault detection for continuous integration testing [B29]. 
+still detecting most defects , and reductions of 40% in the test execution duration can be reached 
+without significant reduction in fault detection for continuous integration testing . 
 11.5 Using AI for Defect Prediction 
 Defect prediction can be used to predict whether a defect is present, how many defects are present, 
-or whether defects can be found. This capability depends on the sophistication of the tool used.  
+or whether defects can be found. This capability depends on the sophistication of the tool used.
 
 Results are normally used to prioritize the testing (e.g., more tests for those components where more 
 defects are predicted). 
@@ -2838,9 +2495,9 @@ relationship between these factors and the likelihood of defects is beyond human
 result, using an AI-based approach which typically uses ML is a necessity.  Defect prediction is most 
 effective when based on prior experiences in a similar situation (e.g., with the same code base and/or 
 the same developers). 
-Defect prediction using ML has been successfully used in several different situations (e.g., [B30] and 
-[B31]).  The best predictors have been found to be people and organizational measures rather than 
-the more widely used source code metrics, such as lines of code and cyclomatic complexity [B32]. 
+Defect prediction using ML has been successfully used in several different situations (e.g.,  and 
+).  The best predictors have been found to be people and organizational measures rather than 
+the more widely used source code metrics, such as lines of code and cyclomatic complexity . 
 11.5.1 Hands-On Exercise: Build a Defect Prediction System 
 Students will use a suitable dataset (e.g., including source code measures and corresponding defect 
 data) to build a simple defect prediction model and use it to predict the likelihood of defects using 
@@ -2870,7 +2527,7 @@ scripts that interact directly with the images, buttons and text fields on the s
 a human user, without being affected by the overall screen layout.  The use of image recognition in 
 test automation can become restricted by the computing resources needed.  However, the availability 
 of affordable AI that supports sophisticated image recognition now makes this approach possible for 
-mainstream use. 
+mainstream use.
 
 11.6.2 Using AI to Test the GUI 
 ML models can be used to determine the acceptability of user interface screens (e.g., by using 
@@ -2887,5 +2544,5 @@ create more sophisticated AI-based regression testing tools that are capable of 
 detected user interface changes are likely to be acceptable to users, or whether these changes 
 should be flagged for checking by a human.  Such AI-based tools can also be used to support testing 
 for compatibility on different browsers, devices or platforms aimed at checking that the user interface 
-for the same application works correctly on various browsers/devices/platforms. 
+for the same application works correctly on various browsers/devices/platforms.
 

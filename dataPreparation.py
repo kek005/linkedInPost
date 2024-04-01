@@ -3,7 +3,8 @@ import re
 
 def extract_text_from_pdf(pdf_path, skip_pages=set()):
     """
-    Extracts text from a PDF, skipping specified pages and removing a dynamically generated footer.
+    Extracts text from a PDF, skipping specified pages, and removing headers, footers,
+    as well as various types of references including sections, chapters, and citation keys.
 
     :param pdf_path: Path to the PDF file.
     :param skip_pages: A set of page numbers to skip, starting from 1.
@@ -18,30 +19,34 @@ def extract_text_from_pdf(pdf_path, skip_pages=set()):
             
             page_text = doc.load_page(page_num).get_text()
 
-            # Remove header using regex
-            header_pattern = re.compile(r"Certified Tester\s+AI Testing \(CT-AI\)\s+Syllabus\s*", re.MULTILINE)
-            page_text = re.sub(header_pattern, '', page_text)
+            # Remove headers, footers, and references using regex
+            patterns_to_remove = [
+                r"Certified Tester\s+AI Testing \(CT-AI\)\s+Syllabus\s*",
+                r"v\d+\.\d+\s+Page \d+ of \d+\s+\d{4}-\d{2}-\d{2}\s+© International Software Testing Qualifications Board\s*",
+                r"\(see Section \d+\.\d+\)",
+                r"\(see \[\w+\] for more details\)",
+                r"\(see\s+.*?\)",
+                r"\[see\s+.*?\]",
+                r"– see.*",
+                r"as shown on.*",
+                r"shown in.*",
+                r"See.*",
+                r"Figure\s+\d+:\s+.*?",
+                r"\[\w+\d*\]",  # Matches references like [B05]
+                r"\(see Chapter \d+\)"  # Matches phrases like "(see Chapter 5)"
+            ]
 
-            # Remove footer using regex
-            footer_pattern = re.compile(r"v\d+\.\d+\s+Page \d+ of \d+\s+\d{4}-\d{2}-\d{2}\s+© International Software Testing Qualifications Board\s*", re.MULTILINE)
-            page_text = re.sub(footer_pattern, '', page_text)
-
-            # Remove dynamically generated footer text using regex
-            footer_pattern = re.compile(r"v\d+\.\d+ Page \d+ of \d+ \d{4}-\d{2}-\d{2}\n© International Software Testing Qualifications Board")
-            page_text = re.sub(footer_pattern, '', page_text)
-
-            # Remove static header text
-            #header_text = "Certified Tester\nAI Testing (CT-AI)\nSyllabus"
-            #page_text = page_text.replace(header_text, '')
+            for pattern in patterns_to_remove:
+                page_text = re.sub(pattern, '', page_text, flags=re.MULTILINE)
             
-            text += page_text + "\n"  # Add a newline to separate pages
+            text += page_text.strip() + "\n\n"  # Add stripped page text with two newlines as separator
             
     return text
 
 # Example usage
 pdf_path = "C:\code\linkedInPost\ISTQB_CT-AI_Syllabus_v1.0_mghocmT.pdf"
 # Assuming the first and second pages are title and TOC
-extracted_text = extract_text_from_pdf(pdf_path, skip_pages={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99})
+extracted_text = extract_text_from_pdf(pdf_path, skip_pages={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 20, 25, 32, 39, 44, 49, 57, 65, 73, 76, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99})
 # Save the cleaned text to a new file
 with open('cleaned_book.txt', 'w', encoding='utf-8') as file:
     file.write(extracted_text)

@@ -14,6 +14,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import os
+import re
 import openai
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -31,6 +32,7 @@ service = Service(ChromeDriverManager().install())
 summary_of_experience = "7 years in Information Technology overall. 6 years of experience with Test automation, manual tesing, performance testing, jmeter, selenium webdriver, python programming language, pytest, Postman, Jenkins, DevOps, Jira, white box, SQL, agile methodologies, robot framework, Confluence, testrail, data base, test cases, Testrail, test scenarios, scrum, user acceptance testing, git, continuous integration, qa/qc, Linux, REST API, unit testing, azure boards, Microsoft azure, healfcare domain. 5 years of selenium, appium, chrome dev tool, ISTQB, Mobile testing, Charles Proxy, iOS. 3 years managing QA team, Salesforce, AWS, C#, Cypress, surpervising QA team. 2 years of etl testing, javascript, customer service experience. Salary: $135,000/year which equal $65/hr. I heard about this job from LinkedIn. Not comfortable commuting to job location."
 summary_radio_questions = "yes for drug test, background check, US Citizen. no for sponsorship, I will never require sponsoreship, I'm US Citizen."
 summary_select_questions = "profectional english, yes for full time, contract, part time. US citizen, Do not required sponsorship."
+file_path = 'cleaned_book.txt'
 class Linkedin:
     def __init__(self):
         
@@ -56,6 +58,32 @@ class Linkedin:
         except:
             prRed("❌ Couldn't generate url, make sure you have /data folder and modified config.py file for your preferances.")
 
+    # Read the Clean Text from File
+    def read_clean_text(self, file_path):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.read()
+        
+    # Partition Text by Chapters
+    def partition_text_by_chapters(self, text):
+        # Regular expression to identify chapter and subchapter headings
+        # This pattern looks for sequences of numbers separated by dots,
+        # possibly followed by additional characters (e.g., "3.1 Forms of ML")
+        chapter_pattern = re.compile(r'\n\d+(\.\d+)*\s+[A-Za-z]')
+        
+        # Use the regular expression to find all matches; add start and end indices
+        chapters_starts = [match.start() for match in chapter_pattern.finditer(text)]
+        chapters_starts.append(len(text))  # Add the end of the text to close the last segment
+        
+        # Extract segments based on the indices
+        segments = [text[chapters_starts[i]:chapters_starts[i + 1]].strip() for i in range(len(chapters_starts) - 1)]
+        
+        return segments
+
+    def remove_non_bmp_characters(self, text):
+
+        """Remove non-BMP characters from a string."""
+        return ''.join(char for char in text if ord(char) <= 0xFFFF)
+
     def linkJobApply(self):
         self.generateUrls()
         countApplied = 0
@@ -78,20 +106,40 @@ class Linkedin:
             self.driver.execute_script(homeButton)
             time.sleep(5)
 
+        # click the button to post on LinkedIn
         self.driver.find_element(By.XPATH,"//button[contains(@class, 'artdeco-button') and contains(@class, 'share-box-feed-entry__trigger')]").click()
         time.sleep(5)
-        bookExcerpt = "AI testing is a type of software testing that involves testing artificial intelligence applications. It is a process that involves testing the functionality, performance, and reliability of AI applications. AI testing is an important part of the software development process, as it helps ensure that AI applications are working as intended and are free from bugs and errors. AI testing is a complex process that requires specialized tools and techniques to ensure that AI applications are tested thoroughly and accurately."
-        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less."
+
+        # Example usage
+        file_path = 'cleaned_book.txt'
+        clean_text = self.read_clean_text(file_path)
+        segments = self.partition_text_by_chapters(clean_text)
+
+        # To randomly select a segment
+        selected_segment = random.choice(segments)
+        print(f"Selected Segment:\n{selected_segment}")
+
+        hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
+        bookExcerpt = selected_segment
+        print("The segment from the book I am sending gpt is:")
+        print(bookExcerpt)
+        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
+        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
         gpt_response = self.get_gpt_response(prompt)
+        time.sleep(2)
+        # Clean the GPT response before sending it
+        clean_gpt_response = self.remove_non_bmp_characters(gpt_response)
         time.sleep(random.uniform(1, constants.botSpeed))
-        print("Here is the response from GPT for radio button continue page: ")
-        print(gpt_response)
         
         # Find the content-editable element (ql-editor) within the Quill container
         editor = self.driver.find_element(By.XPATH, "//div[contains(@class, 'ql-editor') and @contenteditable='true']")
 
         # Use send_keys to input text
-        editor.send_keys(gpt_response)
+        editor.send_keys(clean_gpt_response)
+        time.sleep(50)
+
+        # Click the post button
+        #self.driver.find_element(By.XPATH,"//button[contains(@class, 'share-actions__primary-action') and contains(@class, 'ember-view')]").click()
 
         #element = self.driver.find_element(By.XPATH, "//div[@class='ql-clipboard']")
         #self.driver.execute_script("arguments[0].click();", element)
