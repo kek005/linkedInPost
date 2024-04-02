@@ -124,7 +124,8 @@ class Linkedin:
         print("The segment from the book I am sending gpt is:")
         print(bookExcerpt)
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
-        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
+        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
+        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
         gpt_response = self.get_gpt_response(prompt)
         time.sleep(2)
         # Clean the GPT response before sending it
@@ -136,10 +137,59 @@ class Linkedin:
 
         # Use send_keys to input text
         editor.send_keys(clean_gpt_response)
-        time.sleep(50)
+        time.sleep(5)
+        print("I just sent the gpt response to the linkedin post editor")
+        print("I am about to click the post button")
 
+        time.sleep(25)
         # Click the post button
+        # Define your XPath
+        xpath = "//button[contains(@class, 'share-actions__primary-action') and contains(@class, 'ember-view')]"
         #self.driver.find_element(By.XPATH,"//button[contains(@class, 'share-actions__primary-action') and contains(@class, 'ember-view')]").click()
+
+        # JavaScript to find and click the element
+        js_click_script = f"""
+        var xpath = "{xpath}";
+        var button = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if (button) button.click();
+        """
+        print("I am here")
+        # Execute the script
+        self.driver.execute_script(js_click_script)
+        print("I clicked the post button")
+        print("I am waiting for 20 seconds")
+
+        time.sleep(20)
+        # Post in groups if it asks for
+        try:
+            # Click on post in group button
+            xpathPostInGroup = "//a[contains(@class, 'app-aware-link') and contains(@class, 'artdeco-button--primary')]"
+            # JavaScript to find and click the element
+            js_click_script = f"""
+            var xpath = "{xpathPostInGroup}";
+            var button = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            if (button) button.click();
+            """
+            # Execute the script
+            self.driver.execute_script(js_click_script)
+            print("I clicked the post in group button")
+            time.sleep(8)
+
+            # now post in the group
+            xpathPostGroup = "//a[contains(@class, 'share-actions__primary-action') and contains(@class, 'ember-view')]"
+
+            # JavaScript to find and click the element
+            js_click_script = f"""
+            var xpath = "{xpathPostGroup}";
+            var button = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            if (button) button.click();
+            """
+            print("I am here")
+            # Execute the script
+            self.driver.execute_script(js_click_script)
+            print("I just post in a group")
+        except:
+            print("I could not post in a group as it was not prompted")
 
         #element = self.driver.find_element(By.XPATH, "//div[@class='ql-clipboard']")
         #self.driver.execute_script("arguments[0].click();", element)
@@ -574,7 +624,7 @@ class Linkedin:
             result = "* 🥵 " +str(applyPages)+ " Pages, couldn't apply to this job! Extra info needed. Link: " +str(offerPage)
         return result"""
 
-    def get_gpt_response(self, prompt):
+    '''def get_gpt_response(self, prompt):
         try:
             client = OpenAI()
             response = client.chat.completions.create(
@@ -593,7 +643,32 @@ class Linkedin:
             return gpt_response
         except Exception as e:
             print(f"An error occurred: {e}")
+            return None'''
+
+
+
+    def get_gpt_response(self, prompt):
+        try:
+            client = OpenAI()
+            response = client.chat.completions.create(
+  model="gpt-4-0125-preview",
+  messages=[
+    {"role": "system", "content": "You are my assistant"},
+    {"role": "user", "content": prompt}
+  ]
+)
+            print("Here is the response from GPT: ")
+            print(response.choices[0].message)
+            gpt_response = response.choices[0].message.content
+            print("Here is the response from GPT gpt_response: ")
+            print(gpt_response)
+            
+            return gpt_response
+        except Exception as e:
+            print(f"An error occurred: {e}")
             return None
+
+
 
 
     def displayWriteResults(self,lineToWrite: str):
