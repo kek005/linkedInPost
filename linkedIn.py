@@ -123,6 +123,7 @@ class Linkedin:
         word_limits = [50, 100, 150]
         # Randomly select a word limit
         selected_word_limit = random.choice(word_limits)
+        print(f"Selected Word Limit: {selected_word_limit}")
 
         hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
         bookExcerpt = selected_segment
