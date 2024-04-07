@@ -125,14 +125,15 @@ class Linkedin:
         selected_word_limit = random.choice(word_limits)
         print(f"Selected Word Limit: {selected_word_limit}")
 
-        hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
+        #hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
         bookExcerpt = selected_segment
         print("The segment from the book I am sending gpt is:")
         print(bookExcerpt)
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
-        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be {selected_word_limit} words or less. Choose 3 hashtags from this: {hashtag}."
+        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be {selected_word_limit} words or less. Choose 3 hashtags from this: {hashtag}."
+        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be {selected_word_limit} words or less."
         gpt_response = self.get_gpt_response(prompt)
         time.sleep(2)
         # Clean the GPT response before sending it
