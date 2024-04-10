@@ -120,15 +120,15 @@ class Linkedin:
         print(f"Selected Segment:\n{selected_segment}")
 
         # Define the possible word limits
-        word_limits = [50, 100, 150]
+        word_limits = [33, 43, 53]
         # Randomly select a word limit
         selected_word_limit = random.choice(word_limits)
         print(f"Selected Word Limit: {selected_word_limit}")
 
         #hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
         bookExcerpt = selected_segment
-        print("The segment from the book I am sending gpt is:")
-        print(bookExcerpt)
+        #print("The segment from the book I am sending gpt is:")
+        #print(bookExcerpt)
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
         #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
@@ -229,8 +229,6 @@ class Linkedin:
         except Exception as e:
             print(f"An error occurred: {e}")
             return None
-
-
 
 
     def displayWriteResults(self,lineToWrite: str):
