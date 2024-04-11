@@ -167,9 +167,8 @@ class Linkedin:
         # Execute the script
         self.driver.execute_script(js_click_script)
         print("I clicked the post button")
-        print("I am waiting for 20 seconds")
 
-        time.sleep(5)
+        time.sleep(10)
         # Post in groups if it asks for
         try:
             # Click on post in group button
@@ -183,7 +182,7 @@ class Linkedin:
             # Execute the script
             self.driver.execute_script(js_click_script)
             print("I clicked the post in group button")
-            time.sleep(5)
+            time.sleep(10)
 
             # now post in the group
             xpathPostGroup = "//button[contains(@class, 'share-actions__primary-action') and contains(@class, 'artdeco-button')]"
