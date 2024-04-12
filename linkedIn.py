@@ -120,20 +120,24 @@ class Linkedin:
         print(f"Selected Segment:\n{selected_segment}")
 
         # Define the possible word limits
-        word_limits = [33, 43, 53]
+        word_limits = [33, 43, 53, 63, 73, 83, 93]
         # Randomly select a word limit
         selected_word_limit = random.choice(word_limits)
         print(f"Selected Word Limit: {selected_word_limit}")
 
-        #hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
+        hashtag = "#chatgpt, #ai, #education, #learning, #career, #softwaretesting, #qualityassurance"
         bookExcerpt = selected_segment
         #print("The segment from the book I am sending gpt is:")
         #print(bookExcerpt)
-        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
-        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
-        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be 50 words or less. Choose 3 hashtags from this: {hashtag}."
-        #prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be {selected_word_limit} words or less. Choose 3 hashtags from this: {hashtag}."
-        prompt = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be {selected_word_limit} words or less."
+        prompt1 = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise and engaging LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative, demonstrate thought leadership, and engage my network in a discussion on the future of AI testing. let it be {selected_word_limit} words or less. Choose 3 hashtags from this: {hashtag}."
+        prompt2 = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that reflects my expertise as a Software QA Engineer specializing in AI testing. The post should be informative. let it be {selected_word_limit} words or less. Choose 3 hashtags from this: {hashtag} and add another of your choosing."
+        prompt3 = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is engaging. let it be {selected_word_limit} words or less. Choose 2 hashtags from this: {hashtag} and add another of your choosing."
+        prompt4 = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is informative. let it be {selected_word_limit} words or less. Choose 3 hashtags from this: {hashtag} and add another of your choosing."
+        prompt5 = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is insightful. let it be {selected_word_limit} words or less."
+
+        # Choose a prompt randomly
+        prompt = random.choice([prompt1, prompt2, prompt3, prompt4, prompt5])
+        print(f"Selected Prompt:\n{prompt}")
         gpt_response = self.get_gpt_response(prompt)
         time.sleep(2)
         # Clean the GPT response before sending it
