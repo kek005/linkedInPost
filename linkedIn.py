@@ -1,6 +1,7 @@
 import time,math,random,os
 import utils,constants,config
 from selenium import webdriver
+import pyperclip
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -12,6 +13,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 import os
 import re
@@ -117,7 +119,7 @@ class Linkedin:
 
         # To randomly select a segment
         selected_segment = random.choice(segments)
-        print(f"Selected Segment:\n{selected_segment}")
+        #print(f"Selected Segment:\n{selected_segment}")
 
         # Define the possible word limits
         word_limits = [33, 43, 53, 63, 73, 83, 93]
@@ -136,12 +138,43 @@ class Linkedin:
         prompt5 = f"Given the following excerpt from a book on AI testing: '{bookExcerpt}', please formulate a concise LinkedIn post that is insightful. let it be {selected_word_limit} words or less."
 
         # Choose a prompt randomly
+        print("I am about to select a prompt")
         prompt = random.choice([prompt1, prompt2, prompt3, prompt4, prompt5])
         print(f"Selected Prompt:\n{prompt}")
         gpt_response = self.get_gpt_response(prompt)
-        time.sleep(2)
+        time.sleep(3)
+
+        # Remove leading and trailing quotation marks
+        gpt_response = gpt_response.strip('"')
+        pyperclip.copy(gpt_response)
+
+        # Find the content-editable element (ql-editor) within the Quill container
+        editor = self.driver.find_element(By.XPATH, "//div[contains(@class, 'ql-editor') and @contenteditable='true']")
+
+
+        # Focus on the input field
+        editor.click()
+
+        # Wait for a moment to ensure the click has registered
+        time.sleep(0.5)
+        
+        # Use send_keys to input text
+        editor.send_keys(Keys.CONTROL + "v") # suggested by copilot
+        # Paste from clipboard
+        #editor.send_keys(Keys.CONTROL, 'v')  # suggested by chatgpt
+
+
+        # JavaScript to set the value of the input field directly
+        '''js_script = f"document.querySelector('{editor}').innerText = `{gpt_response}`;"
+        # Execute the JavaScript to set the text
+        self.driver.execute_script(js_script)
+        # Additionally, you might need to trigger an input event to ensure the input is registered
+        trigger_input_event_script = f"document.querySelector('{editor}').dispatchEvent(new Event('input', {{bubbles: true}}));"
+        self.driver.execute_script(trigger_input_event_script)'''
+
+
         # Clean the GPT response before sending it
-        clean_gpt_response = self.remove_non_bmp_characters(gpt_response)
+        '''clean_gpt_response = self.remove_non_bmp_characters(gpt_response)
         time.sleep(random.uniform(1, constants.botSpeed))
         # Remove leading and trailing quotation marks
         gpt_response = clean_gpt_response.strip('"')
@@ -150,7 +183,7 @@ class Linkedin:
         editor = self.driver.find_element(By.XPATH, "//div[contains(@class, 'ql-editor') and @contenteditable='true']")
 
         # Use send_keys to input text
-        editor.send_keys(gpt_response)
+        editor.send_keys(gpt_response)'''
         time.sleep(5)
         print("I just sent the gpt response to the linkedin post editor")
         print("I am about to click the post button")
