@@ -122,7 +122,7 @@ class Linkedin:
         #print(f"Selected Segment:\n{selected_segment}")
 
         # Define the possible word limits
-        word_limits = [33, 43, 53, 63, 73, 83, 93]
+        word_limits = [33, 43, 53, 63, 73]
         # Randomly select a word limit
         selected_word_limit = random.choice(word_limits)
         print(f"Selected Word Limit: {selected_word_limit}")
