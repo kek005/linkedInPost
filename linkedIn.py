@@ -28,8 +28,10 @@ options = Options()
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 # Create a Service object and pass it to the WebDriver
-service = Service(ChromeDriverManager().install())
-#driver = webdriver.Chrome(service=service, options=options)
+#service = Service(ChromeDriverManager().install())
+service = Service(executable_path=r"C:\Users\DELL\.wdm\drivers\chromedriver\win64\127.0.6533.72\chromedriver-win32\chromedriver.exe")
+print(service.path)  # Add this before initializing the driver
+driver = webdriver.Chrome(service=service, options=options)
 
 summary_of_experience = "7 years in Information Technology overall. 6 years of experience with Test automation, manual tesing, performance testing, jmeter, selenium webdriver, python programming language, pytest, Postman, Jenkins, DevOps, Jira, white box, SQL, agile methodologies, robot framework, Confluence, testrail, data base, test cases, Testrail, test scenarios, scrum, user acceptance testing, git, continuous integration, qa/qc, Linux, REST API, unit testing, azure boards, Microsoft azure, healfcare domain. 5 years of selenium, appium, chrome dev tool, ISTQB, Mobile testing, Charles Proxy, iOS. 3 years managing QA team, Salesforce, AWS, C#, Cypress, surpervising QA team. 2 years of etl testing, javascript, customer service experience. Salary: $135,000/year which equal $65/hr. I heard about this job from LinkedIn. Not comfortable commuting to job location."
 summary_radio_questions = "yes for drug test, background check, US Citizen. no for sponsorship, I will never require sponsoreship, I'm US Citizen."
@@ -243,13 +245,14 @@ class Linkedin:
         #self.driver.find_element(By.XPATH,"//div[@class='ql-clipboard']").click()
 
         time.sleep(5)
-
+        
+# model="gpt-4-0125-preview",
 
     def get_gpt_response(self, prompt):
         try:
             client = OpenAI()
             response = client.chat.completions.create(
-  model="gpt-4-0125-preview",
+  model="gpt-4o",
   messages=[
     {"role": "system", "content": "You are my assistant"},
     {"role": "user", "content": prompt}
