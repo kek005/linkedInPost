@@ -29,7 +29,7 @@ options = Options()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 # Create a Service object and pass it to the WebDriver
 #service = Service(ChromeDriverManager().install())
-service = Service(executable_path=r"C:\Users\DELL\.wdm\drivers\chromedriver\win64\127.0.6533.72\chromedriver-win32\chromedriver.exe")
+service = Service(executable_path=r"C:\Users\DELL\.wdm\drivers\chromedriver\win64\125.0.6097.72\chromedriver-win32\chromedriver.exe")
 print(service.path)  # Add this before initializing the driver
 driver = webdriver.Chrome(service=service, options=options)
 
