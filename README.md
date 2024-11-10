@@ -12,31 +12,22 @@ Error Handling: Manages potential interruptions and errors for a smooth automate
 Prerequisites
 Python 3.x: Ensure Python is installed.
 Selenium: Required for automating browser interactions.
-bash
-Copy code
 pip install selenium
 ChromeDriver: Download the Chrome WebDriver compatible with your Chrome browser version.
 Webdriver Manager: Simplifies driver setup.
-bash
-Copy code
 pip install webdriver-manager
 OpenAI API Key: Needed for generating content using GPT. Sign up for an API key at OpenAI and store it securely.
+
 Additional Libraries: Install other dependencies.
-bash
-Copy code
 pip install pyperclip python-dotenv
 Setup
-Clone the Repository:
 
-bash
-Copy code
-git clone https://github.com/yourusername/LinkedInAutoPoster.git
+Clone the Repository:
+git clone https://github.com/kek005/linkedInPost.git
 cd LinkedInAutoPoster
 Configure Environment Variables:
 
 Create a .env file in the root directory and add your OpenAI API key:
-plaintext
-Copy code
 OPENAI_API_KEY=your_openai_api_key
 Personalize Your Post Settings:
 
@@ -45,13 +36,11 @@ Usage
 Prepare Excerpt Text:
 
 Store the text you’d like to convert into a post within cleaned_book.txt or update the file_path in the script.
+
 Run the Script:
-
-bash
-Copy code
 python linkedin_auto_poster.py
-Process:
 
+Process:
 The script will read your excerpt, generate a post using OpenAI GPT based on customized prompts, and automatically post it to LinkedIn. You can observe the status and any generated logs within the console output.
 Important Notes
 LinkedIn Posting Limits: LinkedIn may have posting limits; use this tool responsibly.
